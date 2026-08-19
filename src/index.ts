@@ -280,10 +280,12 @@ export { ToggleGroup, ToggleGroupItem } from "./components/ui/toggle-group";
 export { Toggle, toggleVariants } from "./components/ui/toggle";
 export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./components/ui/tooltip";
 export { CALLOUT_SHADES, Callout, SHADE_SWATCH, calloutShadeFrom } from "./components/callout";
-export { SiteHeader } from "./components/chrome/SiteHeader";
+export { SiteHeader, defaultLinkComponent } from "./components/chrome/SiteHeader";
 export type {
   SiteHeaderProps,
   SiteHeaderVariant,
+  SiteLinkComponent,
+  SiteLinkProps,
   SiteNavItem,
 } from "./components/chrome/SiteHeader";
 export { SiteFooter } from "./components/chrome/SiteFooter";
@@ -293,11 +295,7 @@ export {
   ChipRow,
   CompactHero,
   Marquee,
-  PillarCards,
-} from "./components/patterns/StyleGuidePatterns";
-export { BrushMark, MarkedText } from "./components/brush/BrushMark";
-export { MARKS, MARK_CATEGORY_LABELS, MARK_NAMES } from "./components/brush/marks";
-export { Logo } from "./components/brand/Logo";
+
 export { LOGOS, LOGO_MIN_SIZE, LOGO_NAMES } from "./components/brand/logos";
 export { COLOR_GROUPS, PILLARS, RADII, TYPE_SCALE } from "./lib/design-tokens";
 export {
