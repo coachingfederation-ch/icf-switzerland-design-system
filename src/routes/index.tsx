@@ -1,24 +1,119 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { COLOR_GROUPS } from "@/lib/design-tokens";
+import { CompactHero, PillarCards } from "@/components/patterns/StyleGuidePatterns";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "ICF Switzerland Design System" },
+      {
+        name: "description",
+        content:
+          "The ICF Switzerland design system: OKLCH colour tokens, self-hosted Quicksand and Plus Jakarta Sans typography, components and page patterns.",
+      },
+      { property: "og:title", content: "ICF Switzerland Design System" },
+      {
+        property: "og:description",
+        content:
+          "Colour tokens, typography, components and page patterns for the ICF Switzerland chapter.",
+      },
+    ],
+  }),
+  component: Overview,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+const SECTIONS = [
+  {
+    to: "/foundations" as const,
+    label: "Foundations",
+    body: "Colour tokens by role, the Quicksand and Plus Jakarta Sans type scale, radii, shadow and focus states.",
+  },
+  {
+    to: "/components" as const,
+    label: "Components",
+    body: "The shadcn component set as styled for ICF: buttons, forms, overlays, tables and feedback.",
+  },
+  {
+    to: "/patterns" as const,
+    label: "Patterns",
+    body: "Page-level compositions: hero band, pillar cards, filter chips, callouts and the marquee.",
+  },
+];
+
+function Overview() {
+  const brand = COLOR_GROUPS.find((group) => group.title === "Brand")!;
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+    <>
+      <CompactHero
+        eyebrow="Design system"
+        title={
+          <>
+            One visual language for
+            <br />
+            ICF Switzerland
+          </>
+        }
+        lede="Every colour, type step and component in this reference comes from the live ICF Switzerland site. Values are OKLCH tokens, typefaces are self-hosted, and nothing depends on an external CDN."
+        ctaLabel="Built on the official ICF palette"
       />
-    </div>
+
+      <main id="main" className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
+        <section aria-labelledby="palette">
+          <p className="eyebrow">Palette</p>
+          <h2 id="palette" className="display-lg mt-3">
+            The official ICF colours
+          </h2>
+          <p className="mt-4 max-w-2xl text-[17px] leading-[1.65] text-muted-foreground">
+            {brand.description}
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {brand.swatches.map((swatch) => (
+              <div
+                key={swatch.token}
+                className={`flex min-h-40 flex-col justify-end rounded-2xl p-5 shadow-soft ${swatch.className} ${swatch.onClassName ?? ""}`}
+              >
+                <p className="font-mono text-xs opacity-80">{swatch.token}</p>
+                <p className="mt-1 text-sm font-semibold">{swatch.role}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="pillars" className="mt-20">
+          <p className="eyebrow">Pillars</p>
+          <h2 id="pillars" className="display-lg mt-3">
+            Three fixed pillar colours
+          </h2>
+          <div className="mt-8">
+            <PillarCards />
+          </div>
+        </section>
+
+        <section aria-labelledby="explore" className="mt-20">
+          <p className="eyebrow">Explore</p>
+          <h2 id="explore" className="display-lg mt-3">
+            Where to go next
+          </h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {SECTIONS.map((section) => (
+              <Link
+                key={section.to}
+                to={section.to}
+                className="group flex flex-col rounded-3xl border border-border bg-card p-6 transition hover:border-chip-active-border"
+              >
+                <h3 className="text-xl">{section.label}</h3>
+                <p className="mt-3 flex-1 text-[15px] leading-[1.65] text-muted-foreground">
+                  {section.body}
+                </p>
+                <span className="mt-5 text-sm font-semibold text-primary">
+                  Open {section.label.toLowerCase()} →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
