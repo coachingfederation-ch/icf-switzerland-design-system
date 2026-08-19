@@ -1,0 +1,863 @@
+{
+  "meta": {
+    "name": "ICF Welcome Design System",
+    "package": "@ws-8ezwjgawfkrnem7hmtfc/adaee055-e6f2-4d44-9b16-337d4735d93f",
+    "version": "1.0.0",
+    "framework": "react",
+    "css_framework": "tailwind",
+    "starter_template": "custom_design_system_tailwind",
+    "theme_files": [
+      "src/styles.css"
+    ],
+    "source_type": "local",
+    "source_manifest": {
+      "#enrichment": "9e3640d03a454970d73f063535c60dc76ce31c1c6c8e53f863bd8d3f67b24c6a",
+      ".gitignore": "6d9e901a692b46a83707c245fb03bc91",
+      ".lovable/plan/icf-design-system-2026-08-19.md": "6dc8078cc20859e3b42b160d9e41fb1a",
+      ".lovable/project.json": "cd369d2c1a917c3065a94c968eeb6939",
+      ".prettierignore": "7279a476f196a2da5f7edd18db568dc6",
+      ".prettierrc": "185ef0234746ab738ac1ab6cec5e2bd9",
+      "AGENTS.md": "3da3c4cd15b686e79a248c25735d6aaf",
+      "README.md": "15ccc2c959c0bff2136261ce044c418f",
+      "bunfig.toml": "89115995d9de72fdfc894e16b1e75297",
+      "components.json": "30d3d035361ce807021f5c54620962e9",
+      "eslint.config.js": "345bdd57e188e0e4525edcd00e5003f5",
+      "package.json": "e301e923773a260751ca57fca251b6c6",
+      "public/favicon.ico": "9f504444f85a5af2eef9264b02ae40be",
+      "public/fonts/Quicksand-OFL.txt": "e18525e4234ac03c13a59b5a64efb05e",
+      "public/fonts/plus-jakarta-sans-variable.woff2": "d8c39204c3aff6cd44d6ead9bf4130fe",
+      "public/fonts/quicksand-variable.woff2": "67a48003c2bac1f57d5a0287f45a2c0f",
+      "public/robots.txt": "f9dff89adf98833e676de2205921996a",
+      "src/components/callout-shades.ts": "081d0eecdc058491b80b38e06472d3fe",
+      "src/components/callout.tsx": "c2e67162659f6c34010c98ddc80ef53e",
+      "src/components/chrome/SiteFooter.tsx": "713787aeb6a66c8c5cb362f11a5f6be1",
+      "src/components/chrome/SiteHeader.tsx": "d51f7640efc48028f62f68eff66d2c62",
+      "src/components/patterns/StyleGuidePatterns.tsx": "ebd2abef8299639ea3eb89bd3d2bcca7",
+      "src/components/ui/accordion.tsx": "55f9dda62b4e3913c9b23e5015a86aef",
+      "src/components/ui/alert-dialog.tsx": "96350e949e9b7b674545430a410ab89c",
+      "src/components/ui/alert.tsx": "f993d7e96b1e25ce50e68ed97e11d2a8",
+      "src/components/ui/aspect-ratio.tsx": "c5c364545e1b25a94e9e752cd67ad048",
+      "src/components/ui/avatar.tsx": "72989cd32f72c4122802540ef32525a5",
+      "src/components/ui/badge.tsx": "81cade001fc4260f9943e18dcd79449b",
+      "src/components/ui/breadcrumb.tsx": "bb9ac254f12662b20d5d50b84308bf3a",
+      "src/components/ui/button-group.tsx": "964036f9f529f5720fb805cf3b3ed0a8",
+      "src/components/ui/button.tsx": "a919e2ecb968cefe5a11b560c13c1191",
+      "src/components/ui/calendar.tsx": "e7631005d4c03774a358576887584bda",
+      "src/components/ui/card.tsx": "d6c48ea36221b9cdc3576d305d12d5d5",
+      "src/components/ui/carousel.tsx": "e324c68ae00cd5aed49317638abd429a",
+      "src/components/ui/chart.tsx": "6a3baf94f2e89f1f97d4d7a28f3622d2",
+      "src/components/ui/checkbox.tsx": "f78aac270ca482c8c2cb907ef6260462",
+      "src/components/ui/collapsible.tsx": "767631bbc344945c236f185f4078d71d",
+      "src/components/ui/command.tsx": "014782599cc838b021ec68b07ad4ea02",
+      "src/components/ui/context-menu.tsx": "e8f839271b665238e63fd6190f134201",
+      "src/components/ui/dialog.tsx": "ef4fe8e7de8675730afe3d633b260e09",
+      "src/components/ui/drawer.tsx": "8be333e8fd8e42576b1b5f72f07f4337",
+      "src/components/ui/dropdown-menu.tsx": "093373982130b4dcb6db4bfea6e5edb5",
+      "src/components/ui/form.tsx": "1b0aa6302b9017ea2a1307c22a1d2983",
+      "src/components/ui/hover-card.tsx": "1442794c5ca2a78d69e4e613b315ed3d",
+      "src/components/ui/input-group.tsx": "9981d455c5aaa88a564bd59ddfaf8f26",
+      "src/components/ui/input-otp.tsx": "65625f2f1c4d731a760aeed7b54459d1",
+      "src/components/ui/input.tsx": "1d4cc52a4cd8afb3e18e45bda942bb8a",
+      "src/components/ui/label.tsx": "7e35df4ca8edd0835efd97ca7937ef92",
+      "src/components/ui/menubar.tsx": "5b905a1833e557a421efa69dcc03ce85",
+      "src/components/ui/navigation-menu.tsx": "e85351147a02b29577ff83d188b63c24",
+      "src/components/ui/pagination.tsx": "fac6cdbb4bbf78b273d85cd36d6cbb49",
+      "src/components/ui/popover.tsx": "f18aa1da2144f25ee60795c539c51bcd",
+      "src/components/ui/progress.tsx": "55c462e5c9dd678dcf2c0c510b014ac4",
+      "src/components/ui/radio-group.tsx": "0e1ace237a5da3197e3eb1e6683faba9",
+      "src/components/ui/resizable.tsx": "d9fcb9203c749fcab4e125a99bb12a86",
+      "src/components/ui/scroll-area.tsx": "87b65d3eb26f2b02ff35a7acea585ba5",
+      "src/components/ui/select.tsx": "31ea1bbd6671833b010b2e852c8a55d0",
+      "src/components/ui/separator.tsx": "433d163c4ffa00b59398a0c293198b5e",
+      "src/components/ui/sheet.tsx": "0221fbf97b69611b47fcbc10bb27669a",
+      "src/components/ui/sidebar.tsx": "83c1623eb50ebc370d7b1b84a542e369",
+      "src/components/ui/skeleton.tsx": "41b182e6e2fc3805960d41e767d4a972",
+      "src/components/ui/slider.tsx": "4752f1bfa26426988d325599e01c335b",
+      "src/components/ui/sonner.tsx": "97f59f60be3413196d095fcbf7383216",
+      "src/components/ui/spinner.tsx": "4799669575bae50e8c2b5a1764cb8c89",
+      "src/components/ui/switch.tsx": "82f5d8b0c59bb7ff305caa9f502e79ff",
+      "src/components/ui/table.tsx": "7cc889989d53894b659903c73aded96e",
+      "src/components/ui/tabs.tsx": "56e725558c2ce72c18243bf51717f385",
+      "src/components/ui/textarea.tsx": "c7aad96fb9545210d53135a96c76ed6b",
+      "src/components/ui/toggle-group.tsx": "ac26383acf721d116ca8e3ab5c5355d5",
+      "src/components/ui/toggle.tsx": "ee8c5adac74e7242b85b544db1a8fbad",
+      "src/components/ui/tooltip.tsx": "67d71db5a1ab935695d1def497f5b8a6",
+      "src/hooks/use-mobile.tsx": "c0a0bdd4638c391a1dd06ac82074e60b",
+      "src/lib/design-tokens.ts": "534ccd20cbf060ca5a8dff49ff5f9d5b",
+      "src/lib/error-capture.ts": "f630d9686a9a989170f22eff4de7b30d",
+      "src/lib/error-page.ts": "8da0ddd7569bac2676b9a5c8edff8a36",
+      "src/lib/lovable-error-reporting.ts": "77368331b8ef6e6edcf1a29b24a52d39",
+      "src/lib/utils.ts": "d9837f38cc05303254571985e3164050",
+      "src/routeTree.gen.ts": "6cd9c3a89f67b5648e278c03927c287f",
+      "src/router.tsx": "8f905e713b0eba7fa8148b7995a708c9",
+      "src/routes/README.md": "b3a2f259b66fd1a11f54b6d5ac83bf57",
+      "src/routes/__root.tsx": "eb81199f920d2bc2bdac413fd213d6e7",
+      "src/routes/components.tsx": "341fe58041df96348fc9fb86d958b3e3",
+      "src/routes/foundations.tsx": "5013ceb9005e692d5b875ceaaa6077ce",
+      "src/routes/index.tsx": "84db287ce63ef60767fe22a6274d474f",
+      "src/routes/patterns.tsx": "a09e67f71e4cdf64c396a96b55dc21bf",
+      "src/server.ts": "c7bbc49bb70e318af618d92775ee0f27",
+      "src/start.ts": "0502f82c58afce5012b4c102e6fe2437",
+      "src/styles.css": "5624fa9ea0f773cf781a45ff3958bc6d",
+      "tsconfig.json": "e84e5c7fe88e3c5a4d54f55a816d42c1",
+      "vite.config.ts": "d67e8217e5f31b87c276b6357c9aedcf"
+    },
+    "pipeline_version": 8
+  },
+  "tokens": {
+    "color": [
+      {
+        "name": "--background",
+        "raw": "oklch(0.9581 0.0181 78.24)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--foreground",
+        "raw": "oklch(0.2802 0.084 278.57)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--card",
+        "raw": "oklch(1 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--card-foreground",
+        "raw": "oklch(0.2802 0.084 278.57)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--popover",
+        "raw": "oklch(1 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--popover-foreground",
+        "raw": "oklch(0.2802 0.084 278.57)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--primary",
+        "raw": "oklch(0.3949 0.1616 271.45)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--primary-foreground",
+        "raw": "oklch(1 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--secondary",
+        "raw": "oklch(0.94 0.016 78.24)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--secondary-foreground",
+        "raw": "oklch(0.3949 0.1616 271.45)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--muted",
+        "raw": "oklch(0.945 0.014 78.24)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--muted-foreground",
+        "raw": "oklch(0.46 0.055 278.57)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--accent",
+        "raw": "oklch(0.8488 0.1627 94.87)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--accent-foreground",
+        "raw": "oklch(0.2802 0.084 278.57)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--highlight",
+        "raw": "oklch(0.6177 0.1969 269.18)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--highlight-foreground",
+        "raw": "oklch(1 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--destructive",
+        "raw": "oklch(0.577 0.245 27.325)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--destructive-foreground",
+        "raw": "oklch(0.984 0.003 247.858)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--border",
+        "raw": "oklch(0.885 0.018 278.57)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--input",
+        "raw": "oklch(0.9 0.016 278.57)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--ring",
+        "raw": "oklch(0.6177 0.1969 269.18)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--hero",
+        "raw": "oklch(0.2802 0.084 278.57)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--hero-foreground",
+        "raw": "oklch(1 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--pillar-sg",
+        "raw": "oklch(0.6177 0.1969 269.18)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--pillar-oe",
+        "raw": "oklch(0.3949 0.1616 271.45)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--pillar-ce",
+        "raw": "oklch(0.2802 0.084 278.57)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--chip",
+        "raw": "oklch(0.965 0.014 78.24)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--chip-foreground",
+        "raw": "oklch(0.3949 0.1616 271.45)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--chip-active-border",
+        "raw": "oklch(0.6177 0.1969 269.18)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--mark-cream",
+        "raw": "oklch(0.9581 0.0181 78.24)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--mark-indigo",
+        "raw": "oklch(0.2802 0.084 278.57)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--mark-blue",
+        "raw": "oklch(0.6177 0.1969 269.18)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--mark-yellow",
+        "raw": "oklch(0.8488 0.1627 94.87)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--teal",
+        "raw": "oklch(0.6177 0.1969 269.18)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--teal-soft",
+        "raw": "oklch(0.94 0.03 269.18)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--teal-foreground",
+        "raw": "oklch(0.3949 0.1616 271.45)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--warn",
+        "raw": "oklch(0.6 0.15 55)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--warn-soft",
+        "raw": "oklch(0.96 0.05 80)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--warn-foreground",
+        "raw": "oklch(0.42 0.12 55)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--chart-1",
+        "raw": "oklch(0.646 0.222 41.116)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--chart-2",
+        "raw": "oklch(0.6 0.118 184.704)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--chart-3",
+        "raw": "oklch(0.398 0.07 227.392)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--chart-4",
+        "raw": "oklch(0.828 0.189 84.429)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--chart-5",
+        "raw": "oklch(0.769 0.188 70.08)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar",
+        "raw": "oklch(0.984 0.003 247.858)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-foreground",
+        "raw": "oklch(0.129 0.042 264.695)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-primary",
+        "raw": "oklch(0.208 0.042 265.755)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-primary-foreground",
+        "raw": "oklch(0.984 0.003 247.858)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-accent",
+        "raw": "oklch(0.968 0.007 247.896)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-accent-foreground",
+        "raw": "oklch(0.208 0.042 265.755)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-border",
+        "raw": "oklch(0.929 0.013 255.508)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-ring",
+        "raw": "oklch(0.704 0.04 256.788)",
+        "source": "src/styles.css"
+      }
+    ],
+    "typography": [
+      {
+        "name": "--font-sans",
+        "raw": "\"Plus Jakarta Sans\", system-ui, -apple-system, sans-serif",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--font-body",
+        "raw": "\"Plus Jakarta Sans\", system-ui, -apple-system, sans-serif",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--font-heading",
+        "raw": "\"Quicksand\", system-ui, -apple-system, sans-serif",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--font-display",
+        "raw": "\"Quicksand\", system-ui, -apple-system, sans-serif",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--font-mono",
+        "raw": "ui-monospace, \"SF Mono\", Menlo, Consolas, monospace",
+        "source": "src/styles.css"
+      }
+    ],
+    "radius": [
+      {
+        "name": "--radius-sm",
+        "raw": "calc(var(--radius) - 4px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-md",
+        "raw": "calc(var(--radius) - 2px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-xl",
+        "raw": "calc(var(--radius) + 4px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-2xl",
+        "raw": "calc(var(--radius) + 8px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-3xl",
+        "raw": "calc(var(--radius) + 12px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-4xl",
+        "raw": "calc(var(--radius) + 16px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius",
+        "raw": "0.75rem",
+        "source": "src/styles.css"
+      }
+    ],
+    "shadow": [
+      {
+        "name": "--shadow-soft",
+        "raw": "0 1px 2px oklch(0.2802 0.084 278.57 / 5%), 0 6px 18px oklch(0.2802 0.084 278.57 / 5%)",
+        "source": "src/styles.css"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Callout",
+      "file": "src/components/callout",
+      "import_path": ""
+    },
+    {
+      "name": "SiteFooter",
+      "file": "src/components/chrome/SiteFooter",
+      "import_path": ""
+    },
+    {
+      "name": "SiteHeader",
+      "file": "src/components/chrome/SiteHeader",
+      "import_path": ""
+    },
+    {
+      "name": "CompactHero",
+      "file": "src/components/patterns/StyleGuidePatterns",
+      "import_path": ""
+    },
+    {
+      "name": "PillarCards",
+      "file": "src/components/patterns/StyleGuidePatterns",
+      "import_path": ""
+    },
+    {
+      "name": "ChipRow",
+      "file": "src/components/patterns/StyleGuidePatterns",
+      "import_path": ""
+    },
+    {
+      "name": "CalloutSet",
+      "file": "src/components/patterns/StyleGuidePatterns",
+      "import_path": ""
+    },
+    {
+      "name": "Marquee",
+      "file": "src/components/patterns/StyleGuidePatterns",
+      "import_path": ""
+    },
+    {
+      "name": "ButtonGroup",
+      "file": "src/components/ui/button-group",
+      "import_path": "",
+      "props": [
+        {
+          "name": "orientation",
+          "type": "enum",
+          "values": [
+            "horizontal",
+            "vertical"
+          ],
+          "default": "horizontal"
+        }
+      ]
+    },
+    {
+      "name": "ButtonGroupSeparator",
+      "file": "src/components/ui/button-group",
+      "import_path": ""
+    },
+    {
+      "name": "ButtonGroupText",
+      "file": "src/components/ui/button-group",
+      "import_path": ""
+    },
+    {
+      "name": "Button",
+      "file": "src/components/ui/button",
+      "import_path": "",
+      "props": [
+        {
+          "name": "variant",
+          "type": "enum",
+          "values": [
+            "default",
+            "destructive",
+            "outline",
+            "secondary",
+            "ghost",
+            "link"
+          ],
+          "default": "default"
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "default",
+            "sm",
+            "lg",
+            "icon",
+            "icon-sm"
+          ],
+          "default": "default"
+        },
+        {
+          "name": "asChild",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "Calendar",
+      "file": "src/components/ui/calendar",
+      "import_path": ""
+    },
+    {
+      "name": "CalendarDayButton",
+      "file": "src/components/ui/calendar",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenu",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuTrigger",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuContent",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuItem",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuCheckboxItem",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuRadioItem",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuLabel",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuSeparator",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuShortcut",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuGroup",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuPortal",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuSub",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuSubContent",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuSubTrigger",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "ContextMenuRadioGroup",
+      "file": "src/components/ui/context-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenu",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuTrigger",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuContent",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuItem",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuCheckboxItem",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuRadioItem",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuLabel",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuSeparator",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuShortcut",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuGroup",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuPortal",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuSub",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuSubContent",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuSubTrigger",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "DropdownMenuRadioGroup",
+      "file": "src/components/ui/dropdown-menu",
+      "import_path": ""
+    },
+    {
+      "name": "InputGroup",
+      "file": "src/components/ui/input-group",
+      "import_path": ""
+    },
+    {
+      "name": "InputGroupAddon",
+      "file": "src/components/ui/input-group",
+      "import_path": "",
+      "props": [
+        {
+          "name": "align",
+          "type": "enum",
+          "values": [
+            "inline-start",
+            "inline-end",
+            "block-start",
+            "block-end"
+          ],
+          "default": "inline-start"
+        }
+      ]
+    },
+    {
+      "name": "InputGroupButton",
+      "file": "src/components/ui/input-group",
+      "import_path": "",
+      "props": [
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "xs",
+            "sm",
+            "icon-xs",
+            "icon-sm"
+          ],
+          "default": "xs"
+        }
+      ]
+    },
+    {
+      "name": "InputGroupText",
+      "file": "src/components/ui/input-group",
+      "import_path": ""
+    },
+    {
+      "name": "InputGroupInput",
+      "file": "src/components/ui/input-group",
+      "import_path": ""
+    },
+    {
+      "name": "InputGroupTextarea",
+      "file": "src/components/ui/input-group",
+      "import_path": ""
+    },
+    {
+      "name": "Input",
+      "file": "src/components/ui/input",
+      "import_path": ""
+    },
+    {
+      "name": "Menubar",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarMenu",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarTrigger",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarContent",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarItem",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarSeparator",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarLabel",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarCheckboxItem",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarRadioGroup",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarRadioItem",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarPortal",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarSubContent",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarSubTrigger",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarGroup",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarSub",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "MenubarShortcut",
+      "file": "src/components/ui/menubar",
+      "import_path": ""
+    },
+    {
+      "name": "Separator",
+      "file": "src/components/ui/separator",
+      "import_path": ""
+    },
+    {
+      "name": "Spinner",
+      "file": "src/components/ui/spinner",
+      "import_path": ""
+    },
+    {
+      "name": "Textarea",
+      "file": "src/components/ui/textarea",
+      "import_path": ""
+    }
+  ]
+}
