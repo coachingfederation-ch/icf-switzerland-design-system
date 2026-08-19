@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ComponentsRouteImport } from './routes/components'
 import { Route as FoundationsRouteImport } from './routes/foundations'
+import { Route as LogosRouteImport } from './routes/logos'
 import { Route as MarksRouteImport } from './routes/marks'
 import { Route as PatternsRouteImport } from './routes/patterns'
 
@@ -30,6 +31,11 @@ const FoundationsRoute = FoundationsRouteImport.update({
   path: '/foundations',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LogosRoute = LogosRouteImport.update({
+  id: '/logos',
+  path: '/logos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MarksRoute = MarksRouteImport.update({
   id: '/marks',
   path: '/marks',
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRoute
   '/foundations': typeof FoundationsRoute
+  '/logos': typeof LogosRoute
   '/marks': typeof MarksRoute
   '/patterns': typeof PatternsRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRoute
   '/foundations': typeof FoundationsRoute
+  '/logos': typeof LogosRoute
   '/marks': typeof MarksRoute
   '/patterns': typeof PatternsRoute
 }
@@ -60,21 +68,31 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRoute
   '/foundations': typeof FoundationsRoute
+  '/logos': typeof LogosRoute
   '/marks': typeof MarksRoute
   '/patterns': typeof PatternsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/components' | '/foundations' | '/marks' | '/patterns'
+  fullPaths:
+    '/' | '/components' | '/foundations' | '/logos' | '/marks' | '/patterns'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/components' | '/foundations' | '/marks' | '/patterns'
-  id: '__root__' | '/' | '/components' | '/foundations' | '/marks' | '/patterns'
+  to: '/' | '/components' | '/foundations' | '/logos' | '/marks' | '/patterns'
+  id:
+    | '__root__'
+    | '/'
+    | '/components'
+    | '/foundations'
+    | '/logos'
+    | '/marks'
+    | '/patterns'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ComponentsRoute: typeof ComponentsRoute
   FoundationsRoute: typeof FoundationsRoute
+  LogosRoute: typeof LogosRoute
   MarksRoute: typeof MarksRoute
   PatternsRoute: typeof PatternsRoute
 }
@@ -102,6 +120,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FoundationsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/logos': {
+      id: '/logos'
+      path: '/logos'
+      fullPath: '/logos'
+      preLoaderRoute: typeof LogosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/marks': {
       id: '/marks'
       path: '/marks'
@@ -123,6 +148,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComponentsRoute: ComponentsRoute,
   FoundationsRoute: FoundationsRoute,
+  LogosRoute: LogosRoute,
   MarksRoute: MarksRoute,
   PatternsRoute: PatternsRoute,
 }
