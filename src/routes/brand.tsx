@@ -317,7 +317,7 @@ function Brand() {
           </Callout>
 
           <h3 className="mt-10 text-2xl">
-            Highlighting <MarkedText mark="Underline02">words</MarkedText>
+            Highlighting <MarkedText>words</MarkedText>
           </h3>
           <ul className="mt-4 grid gap-3 md:grid-cols-2">
             {HIGHLIGHT_RULES.map((rule) => (
