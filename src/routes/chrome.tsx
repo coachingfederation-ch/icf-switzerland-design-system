@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ExternalLink } from "lucide-react";
 import { SiteHeader } from "@/components/chrome/SiteHeader";
 import { SiteFooter } from "@/components/chrome/SiteFooter";
 
@@ -72,7 +73,7 @@ const FOOTER_RULES = [
   },
   {
     title: "External links are marked as external",
-    body: 'Pass them through `externalLinks`: they open in a new tab with `rel="noopener noreferrer"`. Never mix an external URL into `items`.',
+    body: 'The footer takes one ordered `links` list: entries with `to` are in-app routes, entries with `href` are external and open in a new tab with `rel="noopener noreferrer"`. Add an `icon` to make an external or contact link scannable.',
   },
   {
     title: "One wrapping row, no columns",
@@ -160,14 +161,17 @@ function Chrome() {
           </h2>
           <pre className="mt-4 overflow-x-auto rounded-2xl bg-foreground p-5 font-mono text-[12px] leading-[1.7] text-white">
             {`<SiteFooter
-  items={[
+  links={[
     { to: "/about", label: "About" },
     { to: "/imprint", label: "Imprint" },
     { to: "/privacy", label: "Privacy" },
+    {
+      href: "https://coachingfederation.org",
+      label: "coachingfederation.org",
+      icon: <ExternalLink />,
+    },
   ]}
-  externalLinks={[
-    { href: "https://coachingfederation.org", label: "coachingfederation.org" },
-  ]}
+  copyright={t("footer.copyright")}
 />`}
           </pre>
         </section>
@@ -185,9 +189,13 @@ function Chrome() {
           </p>
         </div>
         <SiteFooter
-          items={APP_FOOTER}
-          externalLinks={[
-            { href: "https://coachingfederation.org", label: "coachingfederation.org" },
+          links={[
+            ...APP_FOOTER,
+            {
+              href: "https://coachingfederation.org",
+              label: "coachingfederation.org",
+              icon: <ExternalLink />,
+            },
           ]}
           copyright={`© ${new Date().getFullYear()} ICF Switzerland Charter Chapter`}
         />

@@ -165,8 +165,8 @@ function RootComponent() {
             <Outlet />
           </div>
           <SiteFooter
-            items={STYLE_GUIDE_NAV.filter((item) => item.to !== "/")}
-            externalLinks={[
+            links={[
+              ...STYLE_GUIDE_NAV.filter((item) => item.to !== "/"),
               { href: "https://coachingfederation.org", label: "coachingfederation.org" },
             ]}
             copyright={`© ${new Date().getFullYear()} ICF Switzerland — design system reference`}
