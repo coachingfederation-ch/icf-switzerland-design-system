@@ -2,7 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CompactHero } from "@/components/patterns/StyleGuidePatterns";
 import { Callout } from "@/components/callout";
 import { MarkedText } from "@/components/brush/BrushMark";
+import { AiBadge, AiPhoto } from "@/components/photography/AiPhoto";
+import coachingConversation from "@/assets/photography/coaching-conversation.jpg";
+import honestPortrait from "@/assets/photography/honest-portrait.jpg";
+import communityCircle from "@/assets/photography/community-circle.jpg";
+import focusInAction from "@/assets/photography/focus-in-action.jpg";
 import {
+  AI_PHOTOGRAPHY,
   BEHAVIORS,
   BRAND_STRATEGY,
   COLOR_RATIO,
@@ -16,6 +22,38 @@ import {
   TYPE_ROLES,
   VOICE_STAGES,
 } from "@/lib/brand-guidelines";
+
+/** Reference frames generated under the AI photography rules above. */
+const AI_EXAMPLES = [
+  {
+    src: coachingConversation,
+    width: 1280,
+    height: 854,
+    alt: "A coach listening to a client across a table in a daylit office",
+    caption: "Candid coaching moment — window light, unposed, honest expressions.",
+  },
+  {
+    src: communityCircle,
+    width: 1280,
+    height: 854,
+    alt: "A diverse group of adults laughing together in a workshop circle",
+    caption: "Community in a circle — genuine laughter, deliberate diversity, plain room.",
+  },
+  {
+    src: honestPortrait,
+    width: 1024,
+    height: 1024,
+    alt: "Portrait of a man with a calm, honest expression in soft window light",
+    caption: "Honest portrait — natural skin texture, no studio gloss, no retouching.",
+  },
+  {
+    src: focusInAction,
+    width: 1280,
+    height: 854,
+    alt: "Close-up of hands taking notes in a notebook during a coaching session",
+    caption: "Focus in action — detail shot of engagement rather than a staged pose.",
+  },
+] as const;
 
 export const Route = createFileRoute("/brand")({
   head: () => ({
@@ -356,7 +394,45 @@ function Brand() {
             <p>{PHOTOGRAPHY.note}</p>
           </Callout>
         </section>
+
+        {/* ---------------------------------------------------------------- */}
+        <section className={SECTION} aria-labelledby="ai-photography">
+          <h2 id="ai-photography" className={H2}>
+            AI-generated photography
+          </h2>
+          <p className={LEDE}>{AI_PHOTOGRAPHY.intro}</p>
+
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
+            {AI_EXAMPLES.map((example) => (
+              <AiPhoto
+                key={example.src}
+                src={example.src}
+                alt={example.alt}
+                caption={example.caption}
+                width={example.width}
+                height={example.height}
+                className="aspect-[3/2]"
+              />
+            ))}
+          </div>
+
+          <ul className="mt-8 grid gap-3 md:grid-cols-2">
+            {AI_PHOTOGRAPHY.rules.map((rule) => (
+              <li key={rule} className="rounded-2xl border border-border bg-card p-5 text-[14px] leading-[1.6]">
+                {rule}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-6 flex flex-wrap items-center gap-4 rounded-2xl border border-border bg-card p-5">
+            <AiBadge />
+            <p className="max-w-xl text-[14px] leading-[1.6] text-muted-foreground">
+              {AI_PHOTOGRAPHY.badge.usage}
+            </p>
+          </div>
+        </section>
       </main>
+
     </>
   );
 }

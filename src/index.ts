@@ -294,7 +294,9 @@ export { MARKS, MARK_CATEGORY_LABELS, MARK_NAMES } from "./components/brush/mark
 export { Logo } from "./components/brand/Logo";
 export { LOGOS, LOGO_MIN_SIZE, LOGO_NAMES } from "./components/brand/logos";
 export { COLOR_GROUPS, PILLARS, RADII, TYPE_SCALE } from "./lib/design-tokens";
+export { AiBadge, AiPhoto, type AiBadgeProps, type AiPhotoProps } from "./components/photography/AiPhoto";
 export {
+  AI_PHOTOGRAPHY,
   BEHAVIORS,
   TEXT_COLOR_CLASS,
   BRAND_STRATEGY,

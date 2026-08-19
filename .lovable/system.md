@@ -66,3 +66,9 @@ Behaviours: Forward Thinking, Excellence, Humanity.
 - Show, don't tell: exact numbers over approximations. One big idea per copy.
 - Leading voice by stage: Clever & Insightful for awareness, Clear &
   Goal-Oriented for consideration, Inclusive & Uplifting for loyalty.
+
+## AI-generated photography
+
+AI-generated imagery follows the same natural-photography direction as shot imagery: real light, honest expressions, unposed bodies, believable environments — no surreal composites, no glossy retouching. Keep diversity of age, race and story deliberate.
+
+Every AI-generated image must be clearly marked as AI generated. Render it with the `AiPhoto` component (or `AiBadge` when composing a custom frame) so the disclosure ships with the image; never remove, crop out or fade the badge, and never use AI imagery to depict a real, identifiable person or event.
