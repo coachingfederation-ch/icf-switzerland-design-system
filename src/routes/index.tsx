@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { COLOR_GROUPS } from "@/lib/design-tokens";
 import { CompactHero, PillarCards } from "@/components/patterns/StyleGuidePatterns";
+import { BrushMark, MarkedText } from "@/components/brush/BrushMark";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,6 +39,11 @@ const SECTIONS = [
     label: "Patterns",
     body: "Page-level compositions: hero band, pillar cards, filter chips, callouts and the marquee.",
   },
+  {
+    to: "/marks" as const,
+    label: "Marks",
+    body: "The hand-drawn brush-mark library: underlines, strokes, asterisks, arrows and rings, tinted with tokens.",
+  },
 ];
 
 function Overview() {
@@ -51,7 +57,9 @@ function Overview() {
           <>
             One visual language for
             <br />
-            ICF Switzerland
+            <MarkedText name="TextHighlighMark01" markClassName="-bottom-2 h-[0.22em]">
+              ICF Switzerland
+            </MarkedText>
           </>
         }
         lede="Every colour, type step and component in this reference comes from the live ICF Switzerland site. Values are OKLCH tokens, typefaces are self-hosted, and nothing depends on an external CDN."
@@ -95,7 +103,7 @@ function Overview() {
           <h2 id="explore" className="display-lg mt-3">
             Where to go next
           </h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {SECTIONS.map((section) => (
               <Link
                 key={section.to}
@@ -106,8 +114,12 @@ function Overview() {
                 <p className="mt-3 flex-1 text-[15px] leading-[1.65] text-muted-foreground">
                   {section.body}
                 </p>
-                <span className="mt-5 text-sm font-semibold text-primary">
-                  Open {section.label.toLowerCase()} →
+                <span className="mt-5 flex items-center gap-2 text-sm font-semibold text-primary">
+                  Open {section.label.toLowerCase()}
+                  <BrushMark
+                    name="Arrow03"
+                    className="h-3 text-primary transition group-hover:translate-x-1"
+                  />
                 </span>
               </Link>
             ))}

@@ -1,9 +1,14 @@
 /**
  * Page-level compositions ported from the ICF site, kept imagery-free: hero
  * band, pillar cards, chip/filter row, callouts and the CSS-only marquee.
+ *
+ * Brush marks are the one piece of artwork the system carries. They are always
+ * decorative here: masked, token-tinted and aria-hidden, so they add the
+ * handmade layer without adding meaning a screen reader has to announce.
  */
 import * as React from "react";
 import { Callout } from "@/components/callout";
+import { BrushMark } from "@/components/brush/BrushMark";
 import { PILLARS } from "@/lib/design-tokens";
 
 export function CompactHero({
@@ -18,10 +23,18 @@ export function CompactHero({
   ctaLabel?: string;
 }) {
   return (
-    <header className="bg-hero text-hero-foreground">
-      <div className="mx-auto max-w-7xl px-5 pb-20 pt-14 sm:px-8">
+    <header className="relative overflow-hidden bg-hero text-hero-foreground">
+      {/* Oversized mark bleeding off the band edge — the hero's brush texture. */}
+      <BrushMark
+        name="Other06"
+        className="absolute -right-24 top-6 h-40 text-white/[0.07] sm:h-56"
+      />
+      <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-14 sm:px-8">
         <div className="max-w-3xl">
-          <p className="eyebrow !text-accent">{eyebrow}</p>
+          <p className="eyebrow flex items-center gap-2 !text-accent">
+            <BrushMark name="Asterisk02" className="h-3.5 text-accent" />
+            {eyebrow}
+          </p>
           <h1 className="display-xl mt-4">{title}</h1>
           <p className="mt-6 max-w-2xl text-[17px] leading-[1.65] text-white/85">{lede}</p>
           {ctaLabel && (
