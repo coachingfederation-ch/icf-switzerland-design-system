@@ -1,12 +1,14 @@
 /**
  * Style guide header, ported from the ICF site chrome as a presentational
  * component: same dark hero bar, yellow active underline and pill CTA, but the
- * nav links point at the style guide's own routes and there is no auth, i18n or
- * logo asset behind it (a text lockup stands in for the brand mark).
+ * nav links point at the style guide's own routes and there is no auth or i18n
+ * behind it. The brand mark is the official negative lockup, cleared for the
+ * Deep Blue band.
  */
 import * as React from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
+import { Logo } from "@/components/brand/Logo";
 
 const NAV = [
   { to: "/", label: "Overview" },
@@ -14,16 +16,22 @@ const NAV = [
   { to: "/components", label: "Components" },
   { to: "/patterns", label: "Patterns" },
   { to: "/marks", label: "Marks" },
+  { to: "/logos", label: "Logo" },
 ] as const;
 
 function Wordmark() {
   return (
-    <Link to="/" aria-label="ICF design system home" className="inline-flex flex-col">
-      <span className="font-heading text-lg font-bold leading-none tracking-tight">
-        ICF Switzerland
-      </span>
-      <span className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-accent">
-        Design System
+    <Link
+      to="/"
+      aria-label="ICF Switzerland design system home"
+      className="inline-flex items-center gap-4"
+    >
+      {/* Negative lockup: the header sits on the Deep Blue hero band. */}
+      <Logo orientation="horizontal" tone="negative" decorative className="w-36 sm:w-44" />
+      <span className="hidden border-l border-white/25 pl-4 text-[10px] font-bold uppercase tracking-[0.22em] text-accent sm:inline-block">
+        Design
+        <br />
+        System
       </span>
     </Link>
   );

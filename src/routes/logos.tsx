@@ -164,7 +164,8 @@ function Logos() {
             Never do this
           </h2>
           <div className="mt-8 max-w-3xl">
-            <Callout variant="warning" title="The artwork is fixed">
+            <Callout shade="warning" emoji="⛔">
+              <p className="font-semibold">The artwork is fixed</p>
               <ul className="list-disc space-y-2 pl-5">
                 {MISUSE.map((rule) => (
                   <li key={rule}>{rule}</li>
