@@ -72,3 +72,23 @@ Behaviours: Forward Thinking, Excellence, Humanity.
 AI-generated imagery follows the same natural-photography direction as shot imagery: real light, honest expressions, unposed bodies, believable environments — no surreal composites, no glossy retouching. Keep diversity of age, race and story deliberate.
 
 Every AI-generated image must be clearly marked as AI generated. Render it with the `AiPhoto` component (or `AiBadge` when composing a custom frame) so the disclosure ships with the image; never remove, crop out or fade the badge, and never use AI imagery to depict a real, identifiable person or event.
+
+## Site chrome (SiteHeader / SiteFooter)
+
+`SiteHeader` and `SiteFooter` are layout shells, not an information
+architecture. The navigation is data the consuming project supplies:
+
+```tsx
+<SiteHeader items={[{ to: "/", label: "Home" }, { to: "/events", label: "Events" }]} />
+```
+
+- Always pass the project's own routes via `items` (and `externalLinks` /
+  `copyright` on the footer). Never reuse this design system's own sections —
+  Overview, Brand, Foundations, Components, Patterns, Marks, Logo, Social — in a
+  product app; those exist only to document the system.
+- Header and footer need not carry the same links: the header is primary
+  navigation, the footer is secondary (legal, contact, external).
+- Every `to` must be a route that exists in the project. Create the route file
+  before linking to it.
+- Extend through the provided props (`kicker`, `rightSlot`, `navLabel`,
+  `brandLabel`) instead of forking the component.

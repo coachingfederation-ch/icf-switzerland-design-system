@@ -125,6 +125,21 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+/**
+ * Style-guide-only navigation. This list documents the design system itself —
+ * consuming projects pass their own routes to SiteHeader / SiteFooter.
+ */
+const STYLE_GUIDE_NAV = [
+  { to: "/", label: "Overview" },
+  { to: "/brand", label: "Brand" },
+  { to: "/foundations", label: "Foundations" },
+  { to: "/components", label: "Components" },
+  { to: "/patterns", label: "Patterns" },
+  { to: "/marks", label: "Marks" },
+  { to: "/logos", label: "Logo" },
+  { to: "/social", label: "Social" },
+] as const;
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
@@ -132,12 +147,29 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div className="flex min-h-screen flex-col">
-          <SiteHeader />
+          <SiteHeader
+            items={STYLE_GUIDE_NAV}
+            navLabel="Style guide sections"
+            brandLabel="ICF Switzerland design system home"
+            kicker={
+              <>
+                Design
+                <br />
+                System
+              </>
+            }
+          />
           <div className="flex-1">
             {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
             <Outlet />
           </div>
-          <SiteFooter />
+          <SiteFooter
+            items={STYLE_GUIDE_NAV.filter((item) => item.to !== "/")}
+            externalLinks={[
+              { href: "https://coachingfederation.org", label: "coachingfederation.org" },
+            ]}
+            copyright={`© ${new Date().getFullYear()} ICF Switzerland — design system reference`}
+          />
         </div>
         <Toaster />
       </TooltipProvider>
