@@ -40,6 +40,11 @@ const SECTIONS = [
     body: "Page-level compositions: hero band, pillar cards, filter chips, callouts and the marquee.",
   },
   {
+    to: "/logos" as const,
+    label: "Logo",
+    body: "The approved chapter lockups: orientations, tones, clear space, minimum sizes and misuse.",
+  },
+  {
     to: "/marks" as const,
     label: "Marks",
     body: "The hand-drawn brush-mark library: underlines, strokes, asterisks, arrows and rings, tinted with tokens.",
