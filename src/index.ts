@@ -296,6 +296,7 @@ export { LOGOS, LOGO_MIN_SIZE, LOGO_NAMES } from "./components/brand/logos";
 export { COLOR_GROUPS, PILLARS, RADII, TYPE_SCALE } from "./lib/design-tokens";
 export {
   BEHAVIORS,
+  TEXT_COLOR_CLASS,
   BRAND_STRATEGY,
   COLOR_RATIO,
   FORMAL_DEVICES,
