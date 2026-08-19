@@ -287,7 +287,7 @@ export type {
   SiteNavItem,
 } from "./components/chrome/SiteHeader";
 export { SiteFooter } from "./components/chrome/SiteFooter";
-export type { SiteFooterProps, SiteFooterExternalLink } from "./components/chrome/SiteFooter";
+export type { SiteFooterProps, SiteFooterLink } from "./components/chrome/SiteFooter";
 export {
   CalloutSet,
   ChipRow,
