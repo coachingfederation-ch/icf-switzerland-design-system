@@ -13,6 +13,7 @@ const NAV = [
   { to: "/foundations", label: "Foundations" },
   { to: "/components", label: "Components" },
   { to: "/patterns", label: "Patterns" },
+  { to: "/marks", label: "Marks" },
 ] as const;
 
 function Wordmark() {
