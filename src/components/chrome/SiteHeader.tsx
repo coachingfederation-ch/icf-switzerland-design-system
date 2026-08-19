@@ -12,6 +12,7 @@ import { Logo } from "@/components/brand/Logo";
 
 const NAV = [
   { to: "/", label: "Overview" },
+  { to: "/brand", label: "Brand" },
   { to: "/foundations", label: "Foundations" },
   { to: "/components", label: "Components" },
   { to: "/patterns", label: "Patterns" },

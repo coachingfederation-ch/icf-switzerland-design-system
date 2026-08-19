@@ -18,6 +18,9 @@ export function SiteFooter() {
           </p>
         </div>
         <nav aria-label="Footer" className="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <Link to="/brand" className={LINK}>
+            Brand
+          </Link>
           <Link to="/foundations" className={LINK}>
             Foundations
           </Link>

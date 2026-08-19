@@ -25,6 +25,11 @@ export const Route = createFileRoute("/")({
 
 const SECTIONS = [
   {
+    to: "/brand" as const,
+    label: "Brand",
+    body: "Strategy, tone of voice, verbal devices, editorial master styles, colour ratio and type roles from the brand guidelines.",
+  },
+  {
     to: "/foundations" as const,
     label: "Foundations",
     body: "Colour tokens by role, the Quicksand and Plus Jakarta Sans type scale, radii, shadow and focus states.",
