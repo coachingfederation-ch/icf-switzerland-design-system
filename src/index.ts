@@ -295,3 +295,11 @@ export { Logo } from "./components/brand/Logo";
 export { LOGOS, LOGO_MIN_SIZE, LOGO_NAMES } from "./components/brand/logos";
 export { COLOR_GROUPS, PILLARS, RADII, TYPE_SCALE } from "./lib/design-tokens";
 export { cn } from "./lib/utils";
+export {
+  SOCIAL_FORMATS,
+  SOCIAL_FORMAT_NAMES,
+  SocialBanner,
+  type SocialBannerProps,
+  type SocialFormat,
+  type SocialFormatName,
+} from "./components/social/SocialBanner";
