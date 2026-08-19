@@ -98,11 +98,11 @@ export function SocialBanner({
        */}
       <BrushMark
         name={mark}
-        className="absolute -right-[6cqw] top-1/2 h-[150cqh] -translate-y-1/2 text-primary opacity-90"
+        className="absolute -right-[8cqh] top-1/2 h-[145cqh] w-[145cqh] -translate-y-1/2 text-primary opacity-90"
       />
 
-      <div className="relative flex h-full items-center px-[6cqw]">
-        <p className="font-heading text-[7.2cqw] font-medium leading-none tracking-tight">
+      <div className="relative flex h-full items-center px-[5cqw]">
+        <p className="font-heading text-[5.4cqw] font-medium leading-none tracking-tight whitespace-nowrap">
           {children}{" "}
           <span className="inline-block whitespace-nowrap rounded-full bg-cyan px-[0.42em] pb-[0.14em] pt-[0.08em] text-cyan-foreground">
             {highlight}
