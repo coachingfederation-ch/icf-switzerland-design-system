@@ -77,14 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "ICF Switzerland Design System" },
+      {
+        name: "description",
+        content:
+          "Colour tokens, typography, components and page patterns of the ICF Switzerland design system.",
+      },
+      { name: "author", content: "ICF Switzerland" },
+      { property: "og:title", content: "ICF Switzerland Design System" },
+      {
+        property: "og:description",
+        content:
+          "Colour tokens, typography, components and page patterns of the ICF Switzerland design system.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
