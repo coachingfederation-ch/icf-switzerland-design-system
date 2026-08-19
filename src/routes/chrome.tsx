@@ -41,7 +41,7 @@ const APP_FOOTER = [
 const HEADER_RULES = [
   {
     title: "Lockup, top left, negative tone",
-    body: "The horizontal negative lockup always sits at the leading edge of the Deep Blue band and always links home. `variant=\"hero\"` enlarges it for the landing page; `compact` is the inner-page size. Never centre it, never swap in the positive lockup on this band, and never place a second logo in the bar.",
+    body: 'The horizontal negative lockup always sits at the leading edge of the Deep Blue band and always links home. `variant="hero"` enlarges it for the landing page; `compact` is the inner-page size. Never centre it, never swap in the positive lockup on this band, and never place a second logo in the bar.',
   },
   {
     title: "Primary links, right, four to six of them",
@@ -72,7 +72,7 @@ const FOOTER_RULES = [
   },
   {
     title: "External links are marked as external",
-    body: "Pass them through `externalLinks`: they open in a new tab with `rel=\"noopener noreferrer\"`. Never mix an external URL into `items`.",
+    body: 'Pass them through `externalLinks`: they open in a new tab with `rel="noopener noreferrer"`. Never mix an external URL into `items`.',
   },
   {
     title: "One wrapping row, no columns",
@@ -114,9 +114,9 @@ function Chrome() {
         <h1 className="display-lg mt-3">Header and footer</h1>
         <p className="mt-4 max-w-2xl text-[17px] leading-[1.65] text-muted-foreground">
           Both pieces are abstracted from the live ICF Switzerland site: the band, the lockup
-          placement, the active underline and the accent pill are fixed, while every link is data the
-          app supplies. The bar above is a product example — five app routes, one language control,
-          one Yellow call to action — not this style guide&rsquo;s own navigation.
+          placement, the active underline and the accent pill are fixed, while every link is data
+          the app supplies. The bar above is a product example — five app routes, one language
+          control, one Yellow call to action — not this style guide&rsquo;s own navigation.
         </p>
 
         <section aria-labelledby="header-rules" className="mt-14">

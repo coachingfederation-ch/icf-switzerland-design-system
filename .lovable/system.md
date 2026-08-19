@@ -75,20 +75,40 @@ Every AI-generated image must be clearly marked as AI generated. Render it with 
 
 ## Site chrome (SiteHeader / SiteFooter)
 
-`SiteHeader` and `SiteFooter` are layout shells, not an information
-architecture. The navigation is data the consuming project supplies:
+Both are abstracted shells: the Deep Blue band, lockup placement, active
+underline and accent pill are fixed; every link is data the consuming project
+supplies. See the `/chrome` route for the full anatomy.
 
 ```tsx
-<SiteHeader items={[{ to: "/", label: "Home" }, { to: "/events", label: "Events" }]} />
+<SiteHeader
+  variant="compact"                              // "hero" on the landing page
+  items={[{ to: "/", label: "Home" }, { to: "/events", label: "Events" }]}
+  cta={{ to: "/find-a-coach", label: "Find a coach" }}
+  utilitySlot={<LanguageSwitcher />}
+/>
+<SiteFooter
+  items={[{ to: "/imprint", label: "Imprint" }, { to: "/privacy", label: "Privacy" }]}
+  externalLinks={[{ href: "https://coachingfederation.org", label: "coachingfederation.org" }]}
+/>
 ```
 
-- Always pass the project's own routes via `items` (and `externalLinks` /
-  `copyright` on the footer). Never reuse this design system's own sections —
-  Overview, Brand, Foundations, Components, Patterns, Marks, Logo, Social — in a
-  product app; those exist only to document the system.
-- Header and footer need not carry the same links: the header is primary
-  navigation, the footer is secondary (legal, contact, external).
-- Every `to` must be a route that exists in the project. Create the route file
-  before linking to it.
-- Extend through the provided props (`kicker`, `rightSlot`, `navLabel`,
-  `brandLabel`) instead of forking the component.
+Logo placement:
+
+- Header: horizontal **negative** lockup at the leading edge of the band, always
+  linking home. Footer: horizontal **white** lockup above the copyright. Never
+  centre it, never add a second logo, never use the positive lockup on Deep Blue.
+
+Link placement:
+
+- Header carries **primary** destinations only — four to six. Footer carries the
+  **secondary** set (legal, contact, external). They need not match, and the
+  footer may link to pages the header never shows.
+- Exactly one Yellow accent pill per header, always last; utility controls
+  (language, account, search) are ghost-outlined pills.
+- The current page is marked by the Yellow underline plus white text; never
+  underline other links.
+- Never reuse this design system's own sections — Overview, Brand, Foundations,
+  Components, Patterns, Chrome, Marks, Logo, Social — in a product app. Every
+  `to` must be a route that exists; create the route file before linking.
+- Extend through the provided props (`kicker`, `utilitySlot`, `mobileSlot`,
+  `cta`, `navLabel`, `brandLabel`) instead of forking the component.

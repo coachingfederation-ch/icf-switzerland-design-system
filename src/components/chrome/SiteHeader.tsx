@@ -68,7 +68,7 @@ export const SiteHeader = React.forwardRef<HTMLDivElement, SiteHeaderProps>(func
     className,
     ...props
   },
-  ref
+  ref,
 ) {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const close = React.useCallback(() => setMenuOpen(false), []);
@@ -187,7 +187,7 @@ export const SiteHeader = React.forwardRef<HTMLDivElement, SiteHeaderProps>(func
       <div
         className={cn(
           "mx-auto max-w-7xl px-5 sm:px-8",
-          variant === "hero" ? "py-6 sm:py-8" : "py-5"
+          variant === "hero" ? "py-6 sm:py-8" : "py-5",
         )}
       >
         {bar}

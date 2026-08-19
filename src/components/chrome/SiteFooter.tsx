@@ -43,7 +43,7 @@ export const SiteFooter = React.forwardRef<HTMLElement, SiteFooterProps>(functio
     className,
     ...props
   },
-  ref
+  ref,
 ) {
   const hasLinks = items.length > 0 || externalLinks.length > 0;
 
@@ -52,9 +52,7 @@ export const SiteFooter = React.forwardRef<HTMLElement, SiteFooterProps>(functio
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 px-5 py-8 text-xs sm:flex-row sm:items-center sm:px-8">
         <div className="flex flex-col gap-3">
           {/* White lockup: the footer band is Deep Blue, same as the header. */}
-          {showLogo && (
-            <Logo orientation="horizontal" tone="white" decorative className="w-40" />
-          )}
+          {showLogo && <Logo orientation="horizontal" tone="white" decorative className="w-40" />}
           <p className="text-white/70">
             {copyright ?? `© ${new Date().getFullYear()} ICF Switzerland`}
           </p>
