@@ -26,9 +26,9 @@ function Foundations() {
       <p className="eyebrow">Foundations</p>
       <h1 className="display-lg mt-3">Colour, type and shape</h1>
       <p className="mt-4 max-w-2xl text-[17px] leading-[1.65] text-muted-foreground">
-        Every value below is a CSS custom property in <code className="btn-mono">src/styles.css</code>{" "}
-        exposed as a Tailwind utility. Swatches paint with the real utility, so this page cannot
-        drift from the stylesheet.
+        Every value below is a CSS custom property in{" "}
+        <code className="btn-mono">src/styles.css</code> exposed as a Tailwind utility. Swatches
+        paint with the real utility, so this page cannot drift from the stylesheet.
       </p>
 
       <section aria-labelledby="colour" className="mt-14">
@@ -130,7 +130,10 @@ function Foundations() {
               >
                 Focus me
               </button>
-              <a href="#focus" className="inline-flex h-10 items-center text-sm font-semibold text-primary">
+              <a
+                href="#focus"
+                className="inline-flex h-10 items-center text-sm font-semibold text-primary"
+              >
                 And me
               </a>
             </div>
