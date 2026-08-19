@@ -185,9 +185,13 @@ function Chrome() {
           </p>
         </div>
         <SiteFooter
-          items={APP_FOOTER}
-          externalLinks={[
-            { href: "https://coachingfederation.org", label: "coachingfederation.org" },
+          links={[
+            ...APP_FOOTER,
+            {
+              href: "https://coachingfederation.org",
+              label: "coachingfederation.org",
+              icon: <ExternalLink />,
+            },
           ]}
           copyright={`© ${new Date().getFullYear()} ICF Switzerland Charter Chapter`}
         />
