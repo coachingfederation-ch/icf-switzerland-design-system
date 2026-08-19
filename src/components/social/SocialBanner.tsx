@@ -104,7 +104,7 @@ export function SocialBanner({
       <div className="relative flex h-full items-center px-[6cqw]">
         <p className="font-heading text-[7.2cqw] font-medium leading-none tracking-tight">
           {children}{" "}
-          <span className="inline-block whitespace-nowrap rounded-full bg-teal px-[0.42em] pb-[0.14em] pt-[0.08em] text-teal-foreground">
+          <span className="inline-block whitespace-nowrap rounded-full bg-cyan px-[0.42em] pb-[0.14em] pt-[0.08em] text-cyan-foreground">
             {highlight}
           </span>
         </p>

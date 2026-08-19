@@ -80,6 +80,8 @@
   --color-mark-indigo: var(--mark-indigo);
   --color-mark-blue: var(--mark-blue);
   --color-mark-yellow: var(--mark-yellow);
+  --color-cyan: var(--cyan);
+  --color-cyan-foreground: var(--cyan-foreground);
   --color-teal: var(--teal);
   --color-teal-soft: var(--teal-soft);
   --color-teal-foreground: var(--teal-foreground);
@@ -153,6 +155,15 @@
   --mark-indigo: oklch(0.2802 0.084 278.57);
   --mark-blue: oklch(0.6177 0.1969 269.18);
   --mark-yellow: oklch(0.8488 0.1627 94.87);
+  /*
+   * Chapter Cyan #00ABC8 — the colour of the "Switzerland Charter Chapter"
+   * wordmark in the lockup. It is a graphic colour: used for the banner
+   * highlight pill and accents, never for body copy. The foreground pairing is
+   * Deep Blue (5.3:1); the flat social exports set that word in white, which
+   * only reaches ~2.5:1 and is reserved for the fixed artwork.
+   */
+  --cyan: oklch(0.6928 0.1189 213.5);
+  --cyan-foreground: oklch(0.2802 0.084 278.57);
   --teal: oklch(0.6177 0.1969 269.18);
   --teal-soft: oklch(0.94 0.03 269.18);
   --teal-foreground: oklch(0.3949 0.1616 271.45);
