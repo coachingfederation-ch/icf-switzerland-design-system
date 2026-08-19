@@ -295,3 +295,25 @@ export const PHOTOGRAPHY = {
   ],
   note: "Diversity of age, race and story is deliberate. Photography must be licensed before use; this design system ships tokens and marks only, no imagery.",
 } as const;
+
+/**
+ * Rules for AI-generated photography. Generated imagery follows the same
+ * natural-photography direction as shot imagery, and is always disclosed.
+ */
+export const AI_PHOTOGRAPHY = {
+  intro:
+    "AI-generated photography follows the rules of natural photography, and every generated image is clearly marked with an AI badge so it reads as AI generated.",
+  rules: [
+    "Natural first: real light, honest expressions, unposed bodies, believable environments. No surreal composites, no glossy retouching, no impossible lighting.",
+    "Keep the human values intact — genuine emotion, empathy and connection, with deliberate diversity of age, race and story.",
+    "Every AI-generated image carries the AI badge, placed inside the image frame and legible at the smallest size the image is used.",
+    "Never remove, crop out, or fade the badge, and never use AI imagery to depict a real, identifiable person, event or testimonial.",
+    "Check hands, eyes, text and logos in every generated frame; discard the frame rather than retouching an artefact into something dishonest.",
+  ],
+  badge: {
+    label: "AI generated",
+    usage:
+      "Use the AiPhoto component so the badge ships with the image. Deep Blue pill, white label, Chapter Cyan dot, bottom-left by default — move it only to keep it off a face or off busy detail.",
+  },
+} as const;
+
