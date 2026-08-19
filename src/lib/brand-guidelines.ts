@@ -241,6 +241,16 @@ export const TEXT_COMBINATIONS: CombinationRow[] = [
   { background: "White", className: "bg-card", allowed: ["Deep Blue", "Blue", "Light Blue"] },
 ];
 
+/** Tailwind text utility for each palette name used in the matrix above. */
+export const TEXT_COLOR_CLASS: Record<string, string> = {
+  "Deep Blue": "text-hero",
+  Blue: "text-primary",
+  "Light Blue": "text-highlight",
+  Yellow: "text-accent",
+  Bone: "text-background",
+  White: "text-card",
+};
+
 /** Type roles. Hoss Round is the licensed brand face; Quicksand stands in. */
 export const TYPE_ROLES = [
   {
