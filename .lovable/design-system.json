@@ -579,12 +579,35 @@
     {
       "name": "SiteFooter",
       "file": "src/components/chrome/SiteFooter",
-      "import_path": ""
+      "import_path": "",
+      "usage": "Page-level footer shell matching SiteHeader. Pass the project's own footer links via `items` / `externalLinks` and its own `copyright` line.",
+      "examples": [
+        {
+          "label": "Product app footer",
+          "code": "<SiteFooter\n  items={[\n    { to: \"/about\", label: \"About\" },\n    { to: \"/privacy\", label: \"Privacy\" },\n  ]}\n  externalLinks={[{ href: \"https://coachingfederation.org\", label: \"coachingfederation.org\" }]}\n  copyright={`© ${new Date().getFullYear()} ICF Switzerland`}\n/>"
+        }
+      ],
+      "antipatterns": [
+        "Copying the style guide's footer links (Brand, Foundations, Components, Patterns…) into a real site.",
+        "Hardcoding a second footer instead of supplying link data."
+      ]
     },
     {
       "name": "SiteHeader",
       "file": "src/components/chrome/SiteHeader",
-      "import_path": ""
+      "import_path": "",
+      "usage": "Page-level header shell (Deep Blue band, negative lockup, yellow active underline, mobile menu). Navigation is data: always pass your own project's routes via `items` — the design system's own sections are not an information architecture for your app.",
+      "examples": [
+        {
+          "label": "Product app header",
+          "code": "<SiteHeader\n  items={[\n    { to: \"/\", label: \"Home\" },\n    { to: \"/coaching\", label: \"Coaching\" },\n    { to: \"/events\", label: \"Events\" },\n    { to: \"/contact\", label: \"Contact\" },\n  ]}\n  rightSlot={<Button size=\"sm\">Become a member</Button>}\n/>"
+        }
+      ],
+      "antipatterns": [
+        "Reusing the design system's own nav (Brand, Foundations, Components, Patterns, Marks, Logo, Social) in a product app.",
+        "Linking to routes that do not exist in the project — create the route file first.",
+        "Rebuilding a parallel header instead of passing `items`, `kicker`, and `rightSlot`."
+      ]
     },
     {
       "name": "CompactHero",
