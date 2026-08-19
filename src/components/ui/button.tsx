@@ -31,6 +31,8 @@ const buttonVariants = cva(
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
         "icon-sm": "h-8 w-8 rounded-md",
+        /* Pairs with the `pill` / `pill-ghost` variants (site chrome height). */
+        pill: "h-10 rounded-full px-5",
       },
     },
     defaultVariants: {
