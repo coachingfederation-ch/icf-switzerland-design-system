@@ -270,8 +270,15 @@ function Brand() {
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {TEXT_COMBINATIONS.map((row) => (
               <div key={row.background} className="overflow-hidden rounded-3xl border border-border">
-                <div className={`${row.className} px-5 py-6`}>
-                  <p className="font-heading text-lg text-white mix-blend-difference">Aa</p>
+                <div className={`${row.className} space-y-1 px-5 py-6`}>
+                  {row.allowed.map((name) => (
+                    <p
+                      key={name}
+                      className={`font-heading text-lg ${TEXT_COLOR_CLASS[name] ?? "text-foreground"}`}
+                    >
+                      Aa — {name}
+                    </p>
+                  ))}
                 </div>
                 <div className="bg-card px-5 py-4">
                   <p className="text-[14px] font-semibold">{row.background} background</p>
