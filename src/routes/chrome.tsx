@@ -161,14 +161,17 @@ function Chrome() {
           </h2>
           <pre className="mt-4 overflow-x-auto rounded-2xl bg-foreground p-5 font-mono text-[12px] leading-[1.7] text-white">
             {`<SiteFooter
-  items={[
+  links={[
     { to: "/about", label: "About" },
     { to: "/imprint", label: "Imprint" },
     { to: "/privacy", label: "Privacy" },
+    {
+      href: "https://coachingfederation.org",
+      label: "coachingfederation.org",
+      icon: <ExternalLink />,
+    },
   ]}
-  externalLinks={[
-    { href: "https://coachingfederation.org", label: "coachingfederation.org" },
-  ]}
+  copyright={t("footer.copyright")}
 />`}
           </pre>
         </section>
