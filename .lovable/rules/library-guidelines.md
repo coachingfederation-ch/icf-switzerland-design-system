@@ -1,4 +1,4 @@
-# ICF Welcome Design System — Guidelines
+# ICF Switzerland Design System — Guidelines
 
 ## Components
 
