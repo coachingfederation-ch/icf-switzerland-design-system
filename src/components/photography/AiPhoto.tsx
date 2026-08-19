@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
  */
 export interface AiBadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   /** Label text. Keep it short and explicit. */
-  label?: string;
+  label?: string | undefined;
 }
 
 export const AiBadge = React.forwardRef<HTMLSpanElement, AiBadgeProps>(
