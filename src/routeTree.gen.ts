@@ -15,6 +15,7 @@ import { Route as FoundationsRouteImport } from './routes/foundations'
 import { Route as LogosRouteImport } from './routes/logos'
 import { Route as MarksRouteImport } from './routes/marks'
 import { Route as PatternsRouteImport } from './routes/patterns'
+import { Route as SocialRouteImport } from './routes/social'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const PatternsRoute = PatternsRouteImport.update({
   path: '/patterns',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SocialRoute = SocialRouteImport.update({
+  id: '/social',
+  path: '/social',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/logos': typeof LogosRoute
   '/marks': typeof MarksRoute
   '/patterns': typeof PatternsRoute
+  '/social': typeof SocialRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/logos': typeof LogosRoute
   '/marks': typeof MarksRoute
   '/patterns': typeof PatternsRoute
+  '/social': typeof SocialRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,13 +79,27 @@ export interface FileRoutesById {
   '/logos': typeof LogosRoute
   '/marks': typeof MarksRoute
   '/patterns': typeof PatternsRoute
+  '/social': typeof SocialRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/components' | '/foundations' | '/logos' | '/marks' | '/patterns'
+    | '/'
+    | '/components'
+    | '/foundations'
+    | '/logos'
+    | '/marks'
+    | '/patterns'
+    | '/social'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/components' | '/foundations' | '/logos' | '/marks' | '/patterns'
+  to:
+    | '/'
+    | '/components'
+    | '/foundations'
+    | '/logos'
+    | '/marks'
+    | '/patterns'
+    | '/social'
   id:
     | '__root__'
     | '/'
@@ -86,6 +108,7 @@ export interface FileRouteTypes {
     | '/logos'
     | '/marks'
     | '/patterns'
+    | '/social'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -95,6 +118,7 @@ export interface RootRouteChildren {
   LogosRoute: typeof LogosRoute
   MarksRoute: typeof MarksRoute
   PatternsRoute: typeof PatternsRoute
+  SocialRoute: typeof SocialRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -141,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PatternsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/social': {
+      id: '/social'
+      path: '/social'
+      fullPath: '/social'
+      preLoaderRoute: typeof SocialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -151,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   LogosRoute: LogosRoute,
   MarksRoute: MarksRoute,
   PatternsRoute: PatternsRoute,
+  SocialRoute: SocialRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

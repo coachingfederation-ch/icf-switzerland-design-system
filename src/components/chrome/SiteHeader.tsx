@@ -17,6 +17,7 @@ const NAV = [
   { to: "/patterns", label: "Patterns" },
   { to: "/marks", label: "Marks" },
   { to: "/logos", label: "Logo" },
+  { to: "/social", label: "Social" },
 ] as const;
 
 function Wordmark() {

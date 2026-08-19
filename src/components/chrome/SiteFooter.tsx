@@ -30,6 +30,9 @@ export function SiteFooter() {
           <Link to="/logos" className={LINK}>
             Logo
           </Link>
+          <Link to="/social" className={LINK}>
+            Social
+          </Link>
           <a
             href="https://coachingfederation.org"
             target="_blank"

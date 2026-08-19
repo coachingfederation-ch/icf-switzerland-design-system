@@ -45,6 +45,11 @@ const SECTIONS = [
     body: "The approved chapter lockups: orientations, tones, clear space, minimum sizes and misuse.",
   },
   {
+    to: "/social" as const,
+    label: "Social",
+    body: "Profile banners for LinkedIn, X and Facebook: export sizes, tagline lockup and safe areas.",
+  },
+  {
     to: "/marks" as const,
     label: "Marks",
     body: "The hand-drawn brush-mark library: underlines, strokes, asterisks, arrows and rings, tinted with tokens.",
