@@ -23,7 +23,7 @@ export const Route = createFileRoute("/patterns")({
       },
     ],
   }),
-  component: Patterns;
+  component: Patterns,
 });
 
 function Patterns() {
