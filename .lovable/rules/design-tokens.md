@@ -41,6 +41,8 @@ Apply with any color utility: `bg-<name>`, `text-<name>`, `border-<name>`, `ring
 | `mark-indigo` | `--mark-indigo` |
 | `mark-blue` | `--mark-blue` |
 | `mark-yellow` | `--mark-yellow` |
+| `cyan` | `--cyan` |
+| `cyan-foreground` | `--cyan-foreground` |
 | `teal` | `--teal` |
 | `teal-soft` | `--teal-soft` |
 | `teal-foreground` | `--teal-foreground` |
