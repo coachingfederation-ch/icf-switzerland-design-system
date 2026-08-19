@@ -94,11 +94,13 @@ export function SocialBanner({
        * The mark is oversized and pushed past the right edge on purpose: the
        * bleed is what stops the banner reading as a centred logo slide. It is
        * tinted with the primary token, so it stays a shade of ICF Blue on Deep
-       * Blue rather than a hand-picked colour.
+       * Blue rather than a hand-picked colour. Sizing is a percentage of the
+       * banner height (not a container query unit): the container is queried on
+       * inline-size only, so `cqh` would resolve against the viewport.
        */}
       <BrushMark
         name={mark}
-        className="absolute -right-[8cqh] top-1/2 h-[145cqh] w-[145cqh] -translate-y-1/2 text-primary opacity-90"
+        className="absolute -right-[6%] top-1/2 h-[150%] -translate-y-1/2 text-primary opacity-90"
       />
 
       <div className="relative flex h-full items-center px-[5cqw]">
