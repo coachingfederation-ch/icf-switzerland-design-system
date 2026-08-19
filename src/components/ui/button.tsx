@@ -16,6 +16,14 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        /*
+         * The brand's primary call to action: a Yellow accent pill in small
+         * caps. Only ever one per bar or section (see /chrome).
+         */
+        pill: "rounded-full bg-accent text-accent-foreground text-[11px] font-semibold uppercase tracking-wider hover:brightness-105",
+        /* Secondary/utility pill for the same bar — outlined, never filled. */
+        "pill-ghost":
+          "rounded-full border border-current bg-transparent text-[11px] font-semibold uppercase tracking-wider hover:bg-current/10",
       },
       size: {
         default: "h-9 px-4 py-2",
