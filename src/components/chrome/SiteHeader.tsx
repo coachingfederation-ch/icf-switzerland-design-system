@@ -72,6 +72,8 @@ export const SiteHeader = React.forwardRef<HTMLDivElement, SiteHeaderProps>(func
 ) {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const close = React.useCallback(() => setMenuOpen(false), []);
+  // Unique per instance: the docs page renders two headers on one document.
+  const sheetId = `site-mobile-nav-${React.useId()}`;
 
   // Escape closes the sheet — the sheet is a nav, not a modal, so no focus trap.
   React.useEffect(() => {
@@ -129,7 +131,7 @@ export const SiteHeader = React.forwardRef<HTMLDivElement, SiteHeaderProps>(func
           <button
             type="button"
             aria-expanded={menuOpen}
-            aria-controls="site-mobile-nav"
+            aria-controls={sheetId}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMenuOpen((v) => !v)}
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white transition hover:bg-white/10 lg:hidden"
@@ -143,7 +145,7 @@ export const SiteHeader = React.forwardRef<HTMLDivElement, SiteHeaderProps>(func
         )}
         {menuOpen && hasSheet && (
           <nav
-            id="site-mobile-nav"
+            id={sheetId}
             aria-label={navLabel}
             className="absolute inset-x-0 top-full z-40 mt-3 flex flex-col rounded-2xl bg-hero p-2 text-[13px] font-semibold shadow-lg ring-1 ring-white/20 lg:hidden"
           >
