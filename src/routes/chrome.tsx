@@ -73,7 +73,7 @@ const FOOTER_RULES = [
   },
   {
     title: "External links are marked as external",
-    body: 'Pass them through `externalLinks`: they open in a new tab with `rel="noopener noreferrer"`. Never mix an external URL into `items`.',
+    body: 'The footer takes one ordered `links` list: entries with `to` are in-app routes, entries with `href` are external and open in a new tab with `rel="noopener noreferrer"`. Add an `icon` to make an external or contact link scannable.',
   },
   {
     title: "One wrapping row, no columns",
