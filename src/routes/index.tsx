@@ -55,6 +55,11 @@ const SECTIONS = [
     body: "Profile banners for LinkedIn, X and Facebook: export sizes, tagline lockup and safe areas.",
   },
   {
+    to: "/chrome" as const,
+    label: "Chrome",
+    body: "The header and footer shells: lockup placement per band, primary versus secondary links, the single accent CTA and the mobile sheet.",
+  },
+  {
     to: "/marks" as const,
     label: "Marks",
     body: "The hand-drawn brush-mark library: underlines, strokes, asterisks, arrows and rings, tinted with tokens.",

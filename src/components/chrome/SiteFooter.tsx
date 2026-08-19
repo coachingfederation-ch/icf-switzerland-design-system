@@ -1,9 +1,11 @@
 /**
- * Site footer shell, ported from the ICF site chrome: dark hero band, muted
- * white links, copyright on the left.
+ * Site footer shell, abstracted from the live ICF Switzerland site chrome:
+ * Deep Blue band, white lockup and copyright on the left, one wrapping row of
+ * secondary links on the right.
  *
- * Like `SiteHeader`, the links are data supplied by the consuming project —
- * nothing about the design system's own sections is baked in.
+ * Like `SiteHeader`, all links are data the consuming project supplies. The
+ * footer carries the secondary set — legal, contact, external — and does not
+ * need to mirror the header nav.
  */
 import * as React from "react";
 import { Link } from "@tanstack/react-router";
@@ -17,20 +19,30 @@ export type SiteFooterExternalLink = {
 };
 
 export interface SiteFooterProps extends React.ComponentPropsWithoutRef<"footer"> {
-  /** In-app footer links for the consuming project. */
+  /** In-app footer links: secondary destinations, legal, contact. */
   items?: readonly SiteNavItem[];
-  /** External links (opened in a new tab). */
+  /** External links, opened in a new tab with `rel="noopener noreferrer"`. */
   externalLinks?: readonly SiteFooterExternalLink[];
   /** Line under the lockup. Defaults to `© <year> ICF Switzerland`. */
   copyright?: React.ReactNode;
-  /** Accessible name of the nav landmark. */
+  /** Show the white lockup above the copyright. Defaults to true. */
+  showLogo?: boolean;
+  /** Accessible name of the footer nav landmark. */
   navLabel?: string;
 }
 
 const LINK = "inline-flex min-h-6 items-center text-white/80 hover:text-white";
 
 export const SiteFooter = React.forwardRef<HTMLElement, SiteFooterProps>(function SiteFooter(
-  { items = [], externalLinks = [], copyright, navLabel = "Footer", className, ...props },
+  {
+    items = [],
+    externalLinks = [],
+    copyright,
+    showLogo = true,
+    navLabel = "Footer",
+    className,
+    ...props
+  },
   ref,
 ) {
   const hasLinks = items.length > 0 || externalLinks.length > 0;
@@ -39,7 +51,8 @@ export const SiteFooter = React.forwardRef<HTMLElement, SiteFooterProps>(functio
     <footer ref={ref} className={cn("bg-hero text-hero-foreground", className)} {...props}>
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 px-5 py-8 text-xs sm:flex-row sm:items-center sm:px-8">
         <div className="flex flex-col gap-3">
-          <Logo orientation="horizontal" tone="white" decorative className="w-40" />
+          {/* White lockup: the footer band is Deep Blue, same as the header. */}
+          {showLogo && <Logo orientation="horizontal" tone="white" decorative className="w-40" />}
           <p className="text-white/70">
             {copyright ?? `© ${new Date().getFullYear()} ICF Switzerland`}
           </p>

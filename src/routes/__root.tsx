@@ -135,6 +135,7 @@ const STYLE_GUIDE_NAV = [
   { to: "/foundations", label: "Foundations" },
   { to: "/components", label: "Components" },
   { to: "/patterns", label: "Patterns" },
+  { to: "/chrome", label: "Chrome" },
   { to: "/marks", label: "Marks" },
   { to: "/logos", label: "Logo" },
   { to: "/social", label: "Social" },

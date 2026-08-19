@@ -281,7 +281,11 @@ export { Toggle, toggleVariants } from "./components/ui/toggle";
 export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./components/ui/tooltip";
 export { CALLOUT_SHADES, Callout, SHADE_SWATCH, calloutShadeFrom } from "./components/callout";
 export { SiteHeader } from "./components/chrome/SiteHeader";
-export type { SiteHeaderProps, SiteNavItem } from "./components/chrome/SiteHeader";
+export type {
+  SiteHeaderProps,
+  SiteHeaderVariant,
+  SiteNavItem,
+} from "./components/chrome/SiteHeader";
 export { SiteFooter } from "./components/chrome/SiteFooter";
 export type { SiteFooterProps, SiteFooterExternalLink } from "./components/chrome/SiteFooter";
 export {

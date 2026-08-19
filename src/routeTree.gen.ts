@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BrandRouteImport } from './routes/brand'
+import { Route as ChromeRouteImport } from './routes/chrome'
 import { Route as ComponentsRouteImport } from './routes/components'
 import { Route as FoundationsRouteImport } from './routes/foundations'
 import { Route as LogosRouteImport } from './routes/logos'
@@ -26,6 +27,11 @@ const IndexRoute = IndexRouteImport.update({
 const BrandRoute = BrandRouteImport.update({
   id: '/brand',
   path: '/brand',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChromeRoute = ChromeRouteImport.update({
+  id: '/chrome',
+  path: '/chrome',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ComponentsRoute = ComponentsRouteImport.update({
@@ -62,6 +68,7 @@ const SocialRoute = SocialRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/brand': typeof BrandRoute
+  '/chrome': typeof ChromeRoute
   '/components': typeof ComponentsRoute
   '/foundations': typeof FoundationsRoute
   '/logos': typeof LogosRoute
@@ -72,6 +79,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/brand': typeof BrandRoute
+  '/chrome': typeof ChromeRoute
   '/components': typeof ComponentsRoute
   '/foundations': typeof FoundationsRoute
   '/logos': typeof LogosRoute
@@ -83,6 +91,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/brand': typeof BrandRoute
+  '/chrome': typeof ChromeRoute
   '/components': typeof ComponentsRoute
   '/foundations': typeof FoundationsRoute
   '/logos': typeof LogosRoute
@@ -95,6 +104,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/brand'
+    | '/chrome'
     | '/components'
     | '/foundations'
     | '/logos'
@@ -105,6 +115,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/brand'
+    | '/chrome'
     | '/components'
     | '/foundations'
     | '/logos'
@@ -115,6 +126,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/brand'
+    | '/chrome'
     | '/components'
     | '/foundations'
     | '/logos'
@@ -126,6 +138,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BrandRoute: typeof BrandRoute
+  ChromeRoute: typeof ChromeRoute
   ComponentsRoute: typeof ComponentsRoute
   FoundationsRoute: typeof FoundationsRoute
   LogosRoute: typeof LogosRoute
@@ -148,6 +161,13 @@ declare module '@tanstack/react-router' {
       path: '/brand'
       fullPath: '/brand'
       preLoaderRoute: typeof BrandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chrome': {
+      id: '/chrome'
+      path: '/chrome'
+      fullPath: '/chrome'
+      preLoaderRoute: typeof ChromeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/components': {
@@ -198,6 +218,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BrandRoute: BrandRoute,
+  ChromeRoute: ChromeRoute,
   ComponentsRoute: ComponentsRoute,
   FoundationsRoute: FoundationsRoute,
   LogosRoute: LogosRoute,
