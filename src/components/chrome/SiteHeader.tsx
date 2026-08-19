@@ -47,7 +47,7 @@ export const SiteHeader = React.forwardRef<HTMLDivElement, SiteHeaderProps>(func
     className,
     ...props
   },
-  ref
+  ref,
 ) {
   const [menuOpen, setMenuOpen] = React.useState(false);
 

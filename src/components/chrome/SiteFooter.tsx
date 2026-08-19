@@ -31,7 +31,7 @@ const LINK = "inline-flex min-h-6 items-center text-white/80 hover:text-white";
 
 export const SiteFooter = React.forwardRef<HTMLElement, SiteFooterProps>(function SiteFooter(
   { items = [], externalLinks = [], copyright, navLabel = "Footer", className, ...props },
-  ref
+  ref,
 ) {
   const hasLinks = items.length > 0 || externalLinks.length > 0;
 
