@@ -57,7 +57,9 @@ function Overview() {
           <>
             One visual language for
             <br />
-            <MarkedText name="TextHighlighMark02">ICF Switzerland</MarkedText>
+            <MarkedText name="TextHighlighMark01" markClassName="-bottom-2 h-[0.22em]">
+              ICF Switzerland
+            </MarkedText>
           </>
         }
         lede="Every colour, type step and component in this reference comes from the live ICF Switzerland site. Values are OKLCH tokens, typefaces are self-hosted, and nothing depends on an external CDN."
@@ -91,7 +93,6 @@ function Overview() {
           <h2 id="pillars" className="display-lg mt-3">
             Three fixed pillar colours
           </h2>
-          <BrushMark name="Line04" className="mt-4 h-4 w-40 text-highlight" preserveRatio={false} />
           <div className="mt-8">
             <PillarCards />
           </div>

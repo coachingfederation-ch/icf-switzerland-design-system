@@ -26,8 +26,8 @@ export function CompactHero({
     <header className="relative overflow-hidden bg-hero text-hero-foreground">
       {/* Oversized mark bleeding off the band edge — the hero's brush texture. */}
       <BrushMark
-        name="Other05"
-        className="absolute -right-16 -top-10 h-64 text-white/10 sm:h-80"
+        name="Other06"
+        className="absolute -right-24 top-6 h-40 text-white/[0.07] sm:h-56"
       />
       <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-14 sm:px-8">
         <div className="max-w-3xl">
