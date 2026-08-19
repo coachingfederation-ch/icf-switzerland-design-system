@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ExternalLink } from "lucide-react";
 import { SiteHeader } from "@/components/chrome/SiteHeader";
 import { SiteFooter } from "@/components/chrome/SiteFooter";
 
