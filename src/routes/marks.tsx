@@ -46,7 +46,9 @@ function MarkTile({ name }: { name: MarkName }) {
   return (
     <figure className="flex flex-col rounded-2xl border border-border bg-card p-5">
       <div className="flex h-28 items-center justify-center">
-        <BrushMark name={name} className="max-h-24 max-w-full text-primary" />
+        {/* A masked span has no intrinsic size: it needs an explicit axis
+            (here the height) — max-* alone collapses it to 0×0. */}
+        <BrushMark name={name} className="h-24 max-w-full text-primary" />
       </div>
       <figcaption className="mt-4 border-t border-border pt-3">
         <p className="font-mono text-xs text-muted-foreground">{name}</p>
