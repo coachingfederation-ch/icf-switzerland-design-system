@@ -26,6 +26,11 @@ The full machine-readable catalog lives in this library's `design-system.json` (
 - `@/design-system/{slug}/assets/photography/focus-in-action.jpg` (jpg)
 - `@/design-system/{slug}/assets/photography/honest-portrait.jpg` (jpg)
 
+## Fonts
+
+- `@/design-system/{slug}/assets/fonts/plus-jakarta-sans-variable.woff2` (woff2)
+- `@/design-system/{slug}/assets/fonts/quicksand-variable.woff2` (woff2)
+
 ## Images
 
 - `@/design-system/{slug}/assets/marks/Arrow01.svg.asset.json` (svg, R2 pointer)

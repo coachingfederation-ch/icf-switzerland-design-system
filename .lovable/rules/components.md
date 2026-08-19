@@ -245,8 +245,8 @@ import { Button } from "@ws-8ezwjgawfkrnem7hmtfc/adaee055-e6f2-4d44-9b16-337d473
 
 | Prop | Type | Default |
 |---|---|---|
-| `variant` | default · destructive · outline · secondary · ghost · link | `default` |
-| `size` | default · sm · lg · icon · icon-sm | `default` |
+| `variant` | default · destructive · outline · secondary · ghost · link · pill · pill-ghost | `default` |
+| `size` | default · sm · lg · icon · icon-sm · pill | `default` |
 | `asChild` | boolean | `false` |
 
 ### ButtonGroup
@@ -954,6 +954,7 @@ import { Logo } from "@ws-8ezwjgawfkrnem7hmtfc/adaee055-e6f2-4d44-9b16-337d4735d
 |---|---|---|
 | `orientation` | any | `horizontal` |
 | `tone` | any | `positive` |
+| `size` | xs · sm · md · lg · xl · full | `full` |
 | `decorative` | boolean | `false` |
 
 ### MarkedText
@@ -1536,8 +1537,8 @@ The footer shell: same Deep Blue band, white lockup above the copyright, one wra
 
 | Prop | Type | Default |
 |---|---|---|
-| `items` | any | `—` |
-| `externalLinks` | any | `—` |
+| `links` | any | `—` |
+| `linkComponent` | any | `—` |
 | `copyright` | any | `—` |
 | `showLogo` | boolean | `true` |
 | `navLabel` | string | `Footer` |
@@ -1578,12 +1579,16 @@ The site header shell abstracted from the live ICF site: Deep Blue band, negativ
 | `items` | any | `—` |
 | `variant` | hero · compact | `compact` |
 | `homeTo` | string | `/` |
+| `linkComponent` | any | `—` |
 | `navLabel` | string | `Main` |
 | `brandLabel` | string | `ICF Switzerland home` |
+| `skipToContentLabel` | string | `Skip to content` |
+| `openMenuLabel` | string | `Open menu` |
+| `closeMenuLabel` | string | `Close menu` |
 | `kicker` | any | `—` |
 | `cta` | any | `—` |
 | `utilitySlot` | any | `—` |
-| `mobileSlot` | any | `—` |
+| `mobileSlot` | function | `—` |
 | `standalone` | boolean | `true` |
 
 **Examples:**
