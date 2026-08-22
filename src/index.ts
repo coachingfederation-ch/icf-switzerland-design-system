@@ -302,7 +302,22 @@ export {
   PillarCards,
 } from "./components/patterns/StyleGuidePatterns";
 export { BrushMark, MarkedText } from "./components/brush/BrushMark";
-export { MARKS, MARK_CATEGORY_LABELS, MARK_NAMES } from "./components/brush/marks";
+export type { BrushMarkProps, BrushMarkRender, MarkedTextProps } from "./components/brush/BrushMark";
+export {
+  MARKS,
+  MARK_ALIASES,
+  MARK_ALIAS_NAMES,
+  MARK_CATEGORY_LABELS,
+  MARK_NAMES,
+  resolveMarkName,
+} from "./components/brush/marks";
+export type {
+  MarkAlias,
+  MarkCategory,
+  MarkName,
+  MarkNameOrAlias,
+  MarkSpec,
+} from "./components/brush/marks";
 export { Logo } from "./components/brand/Logo";
 export type { LogoProps, LogoSize } from "./components/brand/Logo";
 export { LOGOS, LOGO_MIN_SIZE, LOGO_NAMES } from "./components/brand/logos";
