@@ -558,6 +558,26 @@
           "type": "boolean",
           "default": "true"
         }
+      ],
+      "usage": "Paints one hand-drawn ICF mark, tinted only by currentColor so a colour token is the only way to colour it. Accepts canonical names (Arrow01) and short aliases (arrow1, highlight1, stroke4, legacy star). Default render=\"mask\"; pass render=\"inline\" when the DOM is rasterised to a canvas, since masked backgrounds do not survive that. Always decorative and aria-hidden.",
+      "examples": [
+        {
+          "label": "Decorative accent",
+          "code": "<BrushMark name=\"arrow1\" className=\"h-8 text-accent\" />"
+        },
+        {
+          "label": "Share card exported with html-to-image",
+          "code": "<BrushMark name=\"highlight1\" render=\"inline\" preserveRatio={false} className=\"h-3 w-full text-accent\" />"
+        },
+        {
+          "label": "Resolving a CMS-stored placement",
+          "code": "const markName = resolveMarkName(stored.mark);\nreturn markName ? <BrushMark name={markName} className=\"h-10 text-primary\" /> : null;"
+        }
+      ],
+      "antipatterns": [
+        "Colouring a mark with a raw hex or a background-image of pre-coloured artwork.",
+        "Giving a mark meaning \u2014 it is decorative and aria-hidden, so never use one as the only carrier of information.",
+        "Sizing a mark with max-h/max-w only: a masked span has no intrinsic size and collapses to 0x0. Set an explicit axis."
       ]
     },
     {
@@ -623,7 +643,7 @@
       "examples": [
         {
           "label": "Product app footer",
-          "code": "\u003cSiteFooter\n  items={[\n    { to: \"/about\", label: \"About\" },\n    { to: \"/imprint\", label: \"Imprint\" },\n    { to: \"/privacy\", label: \"Privacy\" },\n  ]}\n  externalLinks={[{ href: \"https://coachingfederation.org\", label: \"coachingfederation.org\" }]}\n/\u003e"
+          "code": "<SiteFooter\n  items={[\n    { to: \"/about\", label: \"About\" },\n    { to: \"/imprint\", label: \"Imprint\" },\n    { to: \"/privacy\", label: \"Privacy\" },\n  ]}\n  externalLinks={[{ href: \"https://coachingfederation.org\", label: \"coachingfederation.org\" }]}\n/>"
         }
       ],
       "antipatterns": [
@@ -707,11 +727,11 @@
           "default": "true"
         }
       ],
-      "usage": "The site header shell abstracted from the live ICF site: Deep Blue band, negative lockup top-left linking home, primary nav right, ghost utility controls, one Yellow accent pill CTA last, mobile sheet below `lg`. Navigation is data — pass the consuming project's own routes via `items`. Use `variant=\"hero\"` on the landing page and `compact` on inner pages.",
+      "usage": "The site header shell abstracted from the live ICF site: Deep Blue band, negative lockup top-left linking home, primary nav right, ghost utility controls, one Yellow accent pill CTA last, mobile sheet below `lg`. Navigation is data \u2014 pass the consuming project's own routes via `items`. Use `variant=\"hero\"` on the landing page and `compact` on inner pages.",
       "examples": [
         {
           "label": "Product app header",
-          "code": "\u003cSiteHeader\n  variant=\"compact\"\n  items={[\n    { to: \"/\", label: \"Home\" },\n    { to: \"/about\", label: \"About\" },\n    { to: \"/events\", label: \"Events\" },\n  ]}\n  cta={{ to: \"/find-a-coach\", label: \"Find a coach\" }}\n  utilitySlot={\u003cLanguageSwitcher /\u003e}\n  mobileSlot={\u003cAccountLinks /\u003e}\n/\u003e"
+          "code": "<SiteHeader\n  variant=\"compact\"\n  items={[\n    { to: \"/\", label: \"Home\" },\n    { to: \"/about\", label: \"About\" },\n    { to: \"/events\", label: \"Events\" },\n  ]}\n  cta={{ to: \"/find-a-coach\", label: \"Find a coach\" }}\n  utilitySlot={<LanguageSwitcher />}\n  mobileSlot={<AccountLinks />}\n/>"
         }
       ],
       "antipatterns": [
@@ -719,7 +739,7 @@
         "More than one accent pill in the bar, or an accent pill used for a utility control.",
         "Centring the lockup, adding a second logo, or using the positive lockup on the Deep Blue band.",
         "More than six primary nav entries; deeper pages belong under a section page.",
-        "Linking to routes that do not exist yet — create the route file first."
+        "Linking to routes that do not exist yet \u2014 create the route file first."
       ]
     },
     {
@@ -1064,6 +1084,22 @@
           "type": "boolean",
           "default": "false"
         }
+      ],
+      "usage": "The single button/CTA primitive. Pick the variant by surface: default/secondary/outline/ghost/link/pill on light (bone, white, card) surfaces; inverse and inverse-ghost on Deep Blue bands (bg-hero, bg-primary). Use asChild to wrap a router Link or anchor.",
+      "examples": [
+        {
+          "label": "On-dark hero CTAs",
+          "code": "<div className=\"bg-hero p-8\">\n  <Button variant=\"inverse\" size=\"pill\" asChild>\n    <Link to=\"/find-a-coach\">Find a coach</Link>\n  </Button>\n  <Button variant=\"inverse-ghost\" size=\"pill\" asChild>\n    <Link to=\"/events\">See events</Link>\n  </Button>\n</div>"
+        },
+        {
+          "label": "Light-surface accent pill",
+          "code": "<Button variant=\"pill\" asChild>\n  <Link to=\"/join\">Become a member</Link>\n</Button>"
+        }
+      ],
+      "antipatterns": [
+        "Hand-writing an <a> with white background/border styling on Deep Blue instead of variant=\"inverse\" / \"inverse-ghost\".",
+        "Re-skinning a light variant with colour classes (className=\"bg-white text-primary\").",
+        "Using inverse or inverse-ghost on bone, white or card surfaces \u2014 they are illegible there."
       ]
     },
     {
