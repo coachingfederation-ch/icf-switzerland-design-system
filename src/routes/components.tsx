@@ -28,6 +28,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { MenuRow } from "@/components/ui/menu-row";
 import {
   Pagination,
   PaginationContent,
