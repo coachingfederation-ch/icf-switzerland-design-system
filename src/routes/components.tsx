@@ -133,6 +133,50 @@ function Components() {
         </div>
       </Block>
 
+      <Block
+        title="On-dark buttons"
+        note="inverse / inverse-ghost — for bg-hero and bg-primary bands only. Never on bone or white."
+      >
+        <div className="flex flex-wrap items-center gap-3 rounded-xl bg-hero p-6">
+          <Button variant="inverse">Inverse</Button>
+          <Button variant="inverse-ghost">Inverse ghost</Button>
+          <Button variant="inverse" size="pill">
+            Inverse pill
+          </Button>
+          <Button variant="inverse-ghost" size="pill">
+            Inverse ghost pill
+          </Button>
+          <Button variant="inverse" size="pill" asChild>
+            <a href="#on-dark-buttons">As anchor</a>
+          </Button>
+        </div>
+        <p className="mt-4 text-sm text-muted-foreground">
+          Both variants keep a light focus ring so keyboard focus stays visible on Deep Blue, and
+          both work with <code className="btn-mono text-primary">asChild</code> for router links.
+        </p>
+      </Block>
+
+      <Block
+        title="Menu rows"
+        note="MenuRow — the DropdownMenuItem treatment for plain anchors in a shadow-soft card."
+      >
+        <div className="max-w-xs overflow-hidden rounded-xl border border-border bg-card shadow-soft">
+          <MenuRow asChild>
+            <a href="#menu-rows">Profile</a>
+          </MenuRow>
+          <MenuRow asChild>
+            <a href="#menu-rows">Deutsch</a>
+          </MenuRow>
+          <MenuRow>Sign out</MenuRow>
+        </div>
+        <p className="mt-4 text-sm text-muted-foreground">
+          Use <code className="btn-mono text-primary">DropdownMenu</code> when you need Radix
+          keyboard semantics; use <code className="btn-mono text-primary">MenuRow</code> (or the{" "}
+          <code className="btn-mono text-primary">menu-item</code> utility) for lightweight link
+          menus so the values are never hand-maintained.
+        </p>
+      </Block>
+
       <Block title="Badges">
         <div className="flex flex-wrap gap-3">
           <Badge>Default</Badge>
