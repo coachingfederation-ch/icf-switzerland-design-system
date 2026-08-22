@@ -104,7 +104,7 @@ function Block({
 function Components() {
   return (
     <main id="main" className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
-      <p className="eyebrow">Components</p>
+      <p className="eyebrow text-primary">Components</p>
       <h1 className="display-lg mt-3">The component set</h1>
       <p className="mt-4 max-w-2xl text-[17px] leading-[1.65] text-muted-foreground">
         Radix primitives styled with ICF tokens. Nothing here hardcodes a colour, so every variant
@@ -237,8 +237,8 @@ function Components() {
           <AccordionItem value="a">
             <AccordionTrigger>How are tokens named?</AccordionTrigger>
             <AccordionContent>
-              Role first, colour never: <code className="btn-mono">--primary</code>,{" "}
-              <code className="btn-mono">--hero</code>, <code className="btn-mono">--chip</code>.
+              Role first, colour never: <code className="btn-mono text-primary">--primary</code>,{" "}
+              <code className="btn-mono text-primary">--hero</code>, <code className="btn-mono text-primary">--chip</code>.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="b">

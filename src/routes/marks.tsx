@@ -78,7 +78,7 @@ function Marks() {
 
       <main id="main" className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <section aria-labelledby="usage">
-          <p className="eyebrow">Usage</p>
+          <p className="eyebrow text-primary">Usage</p>
           <h2 id="usage" className="display-lg mt-3">
             Three ways to use a mark
           </h2>
@@ -98,7 +98,7 @@ function Marks() {
               <p className="section-label">Accent a label</p>
               <p className="mt-4 flex items-center gap-2">
                 <BrushMark name="Asterisk02" className="h-5 text-accent" />
-                <span className="eyebrow">Sustainable growth</span>
+                <span className="eyebrow text-primary">Sustainable growth</span>
               </p>
               <p className="mt-6 font-mono text-xs text-muted-foreground">
                 {'<BrushMark name="Asterisk02" className="h-5 text-accent" />'}
@@ -119,7 +119,7 @@ function Marks() {
         </section>
 
         <section aria-labelledby="tints" className="mt-20">
-          <p className="eyebrow">Colour</p>
+          <p className="eyebrow text-primary">Colour</p>
           <h2 id="tints" className="display-lg mt-3">
             One mark, any token
           </h2>
@@ -146,7 +146,7 @@ function Marks() {
 
           return (
             <section key={category} aria-labelledby={`cat-${category}`} className="mt-20">
-              <p className="eyebrow">Library</p>
+              <p className="eyebrow text-primary">Library</p>
               <h2 id={`cat-${category}`} className="display-lg mt-3">
                 {MARK_CATEGORY_LABELS[category]}
               </h2>

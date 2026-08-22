@@ -23,11 +23,11 @@ export const Route = createFileRoute("/foundations")({
 function Foundations() {
   return (
     <main id="main" className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
-      <p className="eyebrow">Foundations</p>
+      <p className="eyebrow text-primary">Foundations</p>
       <h1 className="display-lg mt-3">Colour, type and shape</h1>
       <p className="mt-4 max-w-2xl text-[17px] leading-[1.65] text-muted-foreground">
         Every value below is a CSS custom property in{" "}
-        <code className="btn-mono">src/styles.css</code> exposed as a Tailwind utility. Swatches
+        <code className="btn-mono text-primary">src/styles.css</code> exposed as a Tailwind utility. Swatches
         paint with the real utility, so this page cannot drift from the stylesheet.
       </p>
 
@@ -80,7 +80,7 @@ function Foundations() {
             </div>
           ))}
           <div className="p-6">
-            <p className="eyebrow">Eyebrow label</p>
+            <p className="eyebrow text-primary">Eyebrow label</p>
             <p className="section-label mt-3">Section label</p>
             <p className="mt-3 font-mono text-xs text-muted-foreground">
               eyebrow (primary) / section-label (muted) · 11px · 700 · tracking 0.16em · uppercase

@@ -116,7 +116,7 @@ function Brand() {
               { label: "Trajectory — how we get there", body: BRAND_STRATEGY.trajectory },
             ].map((item) => (
               <div key={item.label} className={CARD}>
-                <p className="eyebrow">{item.label}</p>
+                <p className="eyebrow text-primary">{item.label}</p>
                 <p className="mt-3 text-[15px] leading-[1.65]">{item.body}</p>
               </div>
             ))}
@@ -145,7 +145,7 @@ function Brand() {
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
             {BEHAVIORS.map((behavior) => (
               <div key={behavior.name} className={CARD}>
-                <p className="eyebrow">{behavior.name}</p>
+                <p className="eyebrow text-primary">{behavior.name}</p>
                 <h3 className="mt-2 text-xl">{behavior.voice}</h3>
                 <p className="mt-1 text-[13px] font-semibold text-primary">{behavior.device}</p>
                 <ul className="mt-4 space-y-2 text-[14px] leading-[1.6] text-muted-foreground">
@@ -201,7 +201,7 @@ function Brand() {
 
           <div className="mt-6 grid gap-4 lg:grid-cols-2">
             <div className={CARD}>
-              <p className="eyebrow">Formal devices — always</p>
+              <p className="eyebrow text-primary">Formal devices — always</p>
               <dl className="mt-4 divide-y divide-border">
                 {FORMAL_DEVICES.map((device) => (
                   <div key={device.label} className="grid gap-1 py-3 sm:grid-cols-[10rem_1fr]">
@@ -343,7 +343,7 @@ function Brand() {
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {TYPE_ROLES.map((role) => (
               <div key={role.role} className={CARD}>
-                <p className="eyebrow">{role.role}</p>
+                <p className="eyebrow text-primary">{role.role}</p>
                 <h3 className="mt-2 text-2xl">{role.family}</h3>
                 <p className="mt-1 text-[13px] font-semibold text-primary">
                   In this system: {role.substitute}

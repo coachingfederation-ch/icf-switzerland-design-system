@@ -38,7 +38,7 @@ function Patterns() {
 
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <section aria-labelledby="pillars">
-          <p className="eyebrow">Pattern</p>
+          <p className="eyebrow text-primary">Pattern</p>
           <h2 id="pillars" className="display-lg mt-3">
             Pillar cards
           </h2>
@@ -52,7 +52,7 @@ function Patterns() {
         </section>
 
         <section aria-labelledby="chips" className="mt-20">
-          <p className="eyebrow">Pattern</p>
+          <p className="eyebrow text-primary">Pattern</p>
           <h2 id="chips" className="display-lg mt-3">
             Filter chips
           </h2>
@@ -66,7 +66,7 @@ function Patterns() {
         </section>
 
         <section aria-labelledby="callouts" className="mt-20">
-          <p className="eyebrow">Pattern</p>
+          <p className="eyebrow text-primary">Pattern</p>
           <h2 id="callouts" className="display-lg mt-3">
             Callouts
           </h2>
@@ -82,7 +82,7 @@ function Patterns() {
 
       <section aria-labelledby="marquee" className="border-y border-border bg-secondary py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <p className="eyebrow">Pattern</p>
+          <p className="eyebrow text-primary">Pattern</p>
           <h2 id="marquee" className="display-lg mt-3">
             Partner marquee
           </h2>
