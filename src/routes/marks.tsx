@@ -54,6 +54,7 @@ function MarkTile({ name }: { name: MarkName }) {
         <p className="font-mono text-xs text-muted-foreground">{name}</p>
         <p className="mt-1 text-xs text-muted-foreground">
           {mark.width} × {mark.height}
+          {ALIAS_BY_NAME[name] ? ` · ${ALIAS_BY_NAME[name]}` : ""}
         </p>
       </figcaption>
     </figure>
