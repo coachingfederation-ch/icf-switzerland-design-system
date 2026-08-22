@@ -281,7 +281,9 @@ export { Textarea } from "./components/ui/textarea";
 export { ToggleGroup, ToggleGroupItem } from "./components/ui/toggle-group";
 export { Toggle, toggleVariants } from "./components/ui/toggle";
 export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./components/ui/tooltip";
+export { MenuRow, type MenuRowProps } from "./components/ui/menu-row";
 export { CALLOUT_SHADES, Callout, SHADE_SWATCH, calloutShadeFrom } from "./components/callout";
+export { CALLOUT_ALIASES, type CalloutShade } from "./components/callout-shades";
 export { SiteHeader, defaultLinkComponent } from "./components/chrome/SiteHeader";
 export type {
   SiteHeaderProps,
