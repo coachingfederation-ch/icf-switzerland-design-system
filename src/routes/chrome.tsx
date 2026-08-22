@@ -86,7 +86,7 @@ function RuleList({ rules }: { rules: { title: string; body: string }[] }) {
     <ol className="mt-8 grid gap-4 sm:grid-cols-2">
       {rules.map((rule, index) => (
         <li key={rule.title} className="rounded-3xl border border-border bg-card p-6">
-          <p className="eyebrow">{String(index + 1).padStart(2, "0")}</p>
+          <p className="eyebrow text-primary">{String(index + 1).padStart(2, "0")}</p>
           <h3 className="mt-3 text-lg">{rule.title}</h3>
           <p className="mt-3 text-[15px] leading-[1.65] text-muted-foreground">{rule.body}</p>
         </li>
@@ -111,7 +111,7 @@ function Chrome() {
       />
 
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
-        <p className="eyebrow">Chrome</p>
+        <p className="eyebrow text-primary">Chrome</p>
         <h1 className="display-lg mt-3">Header and footer</h1>
         <p className="mt-4 max-w-2xl text-[17px] leading-[1.65] text-muted-foreground">
           Both pieces are abstracted from the live ICF Switzerland site: the band, the lockup
@@ -121,7 +121,7 @@ function Chrome() {
         </p>
 
         <section aria-labelledby="header-rules" className="mt-14">
-          <p className="eyebrow">Header</p>
+          <p className="eyebrow text-primary">Header</p>
           <h2 id="header-rules" className="display-lg mt-3">
             Logo and link placement
           </h2>
@@ -148,7 +148,7 @@ function Chrome() {
         </section>
 
         <section aria-labelledby="footer-rules" className="mt-16">
-          <p className="eyebrow">Footer</p>
+          <p className="eyebrow text-primary">Footer</p>
           <h2 id="footer-rules" className="display-lg mt-3">
             What belongs in the footer
           </h2>
@@ -179,7 +179,7 @@ function Chrome() {
 
       <section aria-labelledby="footer-live" className="border-t border-border">
         <div className="mx-auto max-w-7xl px-5 pt-16 sm:px-8">
-          <p className="eyebrow">Live</p>
+          <p className="eyebrow text-primary">Live</p>
           <h2 id="footer-live" className="display-lg mt-3">
             The footer band
           </h2>

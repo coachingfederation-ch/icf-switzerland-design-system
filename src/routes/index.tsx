@@ -88,7 +88,7 @@ function Overview() {
 
       <main id="main" className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <section aria-labelledby="palette">
-          <p className="eyebrow">Palette</p>
+          <p className="eyebrow text-primary">Palette</p>
           <h2 id="palette" className="display-lg mt-3">
             The official ICF colours
           </h2>
@@ -109,7 +109,7 @@ function Overview() {
         </section>
 
         <section aria-labelledby="pillars" className="mt-20">
-          <p className="eyebrow">Pillars</p>
+          <p className="eyebrow text-primary">Pillars</p>
           <h2 id="pillars" className="display-lg mt-3">
             Three fixed pillar colours
           </h2>
@@ -119,7 +119,7 @@ function Overview() {
         </section>
 
         <section aria-labelledby="explore" className="mt-20">
-          <p className="eyebrow">Explore</p>
+          <p className="eyebrow text-primary">Explore</p>
           <h2 id="explore" className="display-lg mt-3">
             Where to go next
           </h2>

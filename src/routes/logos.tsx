@@ -58,7 +58,7 @@ function Logos() {
 
       <main id="main" className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <section aria-labelledby="primary">
-          <p className="eyebrow">Primary</p>
+          <p className="eyebrow text-primary">Primary</p>
           <h2 id="primary" className="display-lg mt-3">
             Horizontal is the default
           </h2>
@@ -79,7 +79,7 @@ function Logos() {
         </section>
 
         <section aria-labelledby="variants" className="mt-20">
-          <p className="eyebrow">Variants</p>
+          <p className="eyebrow text-primary">Variants</p>
           <h2 id="variants" className="display-lg mt-3">
             Pick the tone for the surface
           </h2>
@@ -111,7 +111,7 @@ function Logos() {
         </section>
 
         <section aria-labelledby="space" className="mt-20">
-          <p className="eyebrow">Clear space & size</p>
+          <p className="eyebrow text-primary">Clear space & size</p>
           <h2 id="space" className="display-lg mt-3">
             Give it room
           </h2>
@@ -159,7 +159,7 @@ function Logos() {
         </section>
 
         <section aria-labelledby="misuse" className="mt-20">
-          <p className="eyebrow">Misuse</p>
+          <p className="eyebrow text-primary">Misuse</p>
           <h2 id="misuse" className="display-lg mt-3">
             Never do this
           </h2>

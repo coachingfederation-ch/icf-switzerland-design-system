@@ -28,6 +28,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { MenuRow } from "@/components/ui/menu-row";
 import {
   Pagination,
   PaginationContent,
@@ -104,7 +105,7 @@ function Block({
 function Components() {
   return (
     <main id="main" className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
-      <p className="eyebrow">Components</p>
+      <p className="eyebrow text-primary">Components</p>
       <h1 className="display-lg mt-3">The component set</h1>
       <p className="mt-4 max-w-2xl text-[17px] leading-[1.65] text-muted-foreground">
         Radix primitives styled with ICF tokens. Nothing here hardcodes a colour, so every variant
@@ -131,6 +132,50 @@ function Components() {
             Outline pill
           </span>
         </div>
+      </Block>
+
+      <Block
+        title="On-dark buttons"
+        note="inverse / inverse-ghost — for bg-hero and bg-primary bands only. Never on bone or white."
+      >
+        <div className="flex flex-wrap items-center gap-3 rounded-xl bg-hero p-6">
+          <Button variant="inverse">Inverse</Button>
+          <Button variant="inverse-ghost">Inverse ghost</Button>
+          <Button variant="inverse" size="pill">
+            Inverse pill
+          </Button>
+          <Button variant="inverse-ghost" size="pill">
+            Inverse ghost pill
+          </Button>
+          <Button variant="inverse" size="pill" asChild>
+            <a href="#on-dark-buttons">As anchor</a>
+          </Button>
+        </div>
+        <p className="mt-4 text-sm text-muted-foreground">
+          Both variants keep a light focus ring so keyboard focus stays visible on Deep Blue, and
+          both work with <code className="btn-mono text-primary">asChild</code> for router links.
+        </p>
+      </Block>
+
+      <Block
+        title="Menu rows"
+        note="MenuRow — the DropdownMenuItem treatment for plain anchors in a shadow-soft card."
+      >
+        <div className="max-w-xs overflow-hidden rounded-xl border border-border bg-card shadow-soft">
+          <MenuRow asChild>
+            <a href="#menu-rows">Profile</a>
+          </MenuRow>
+          <MenuRow asChild>
+            <a href="#menu-rows">Deutsch</a>
+          </MenuRow>
+          <MenuRow>Sign out</MenuRow>
+        </div>
+        <p className="mt-4 text-sm text-muted-foreground">
+          Use <code className="btn-mono text-primary">DropdownMenu</code> when you need Radix
+          keyboard semantics; use <code className="btn-mono text-primary">MenuRow</code> (or the{" "}
+          <code className="btn-mono text-primary">menu-item</code> utility) for lightweight link
+          menus so the values are never hand-maintained.
+        </p>
       </Block>
 
       <Block title="Badges">
@@ -237,8 +282,8 @@ function Components() {
           <AccordionItem value="a">
             <AccordionTrigger>How are tokens named?</AccordionTrigger>
             <AccordionContent>
-              Role first, colour never: <code className="btn-mono">--primary</code>,{" "}
-              <code className="btn-mono">--hero</code>, <code className="btn-mono">--chip</code>.
+              Role first, colour never: <code className="btn-mono text-primary">--primary</code>,{" "}
+              <code className="btn-mono text-primary">--hero</code>, <code className="btn-mono text-primary">--chip</code>.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="b">

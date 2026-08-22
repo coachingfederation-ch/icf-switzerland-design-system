@@ -2,8 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BrushMark, MarkedText } from "@/components/brush/BrushMark";
 import {
   MARKS,
+  MARK_ALIASES,
   MARK_CATEGORY_LABELS,
   MARK_NAMES,
+  type MarkAlias,
   type MarkCategory,
   type MarkName,
 } from "@/components/brush/marks";
@@ -40,6 +42,18 @@ const TINTS: { label: string; className: string }[] = [
   { label: "text-foreground", className: "text-foreground" },
 ];
 
+/*
+ * Canonical name -> its numbered short alias. `star` (the legacy alias for
+ * Star01) is skipped so each tile shows the alias a placement editor writes.
+ */
+const ALIAS_BY_NAME = Object.entries(MARK_ALIASES).reduce<Partial<Record<MarkName, MarkAlias>>>(
+  (acc, [alias, name]) => {
+    if (alias !== "star") acc[name] = alias as MarkAlias;
+    return acc;
+  },
+  {},
+);
+
 function MarkTile({ name }: { name: MarkName }) {
   const mark = MARKS[name];
 
@@ -54,6 +68,7 @@ function MarkTile({ name }: { name: MarkName }) {
         <p className="font-mono text-xs text-muted-foreground">{name}</p>
         <p className="mt-1 text-xs text-muted-foreground">
           {mark.width} × {mark.height}
+          {ALIAS_BY_NAME[name] ? ` · ${ALIAS_BY_NAME[name]}` : ""}
         </p>
       </figcaption>
     </figure>
@@ -78,7 +93,7 @@ function Marks() {
 
       <main id="main" className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <section aria-labelledby="usage">
-          <p className="eyebrow">Usage</p>
+          <p className="eyebrow text-primary">Usage</p>
           <h2 id="usage" className="display-lg mt-3">
             Three ways to use a mark
           </h2>
@@ -98,7 +113,7 @@ function Marks() {
               <p className="section-label">Accent a label</p>
               <p className="mt-4 flex items-center gap-2">
                 <BrushMark name="Asterisk02" className="h-5 text-accent" />
-                <span className="eyebrow">Sustainable growth</span>
+                <span className="eyebrow text-primary">Sustainable growth</span>
               </p>
               <p className="mt-6 font-mono text-xs text-muted-foreground">
                 {'<BrushMark name="Asterisk02" className="h-5 text-accent" />'}
@@ -119,7 +134,7 @@ function Marks() {
         </section>
 
         <section aria-labelledby="tints" className="mt-20">
-          <p className="eyebrow">Colour</p>
+          <p className="eyebrow text-primary">Colour</p>
           <h2 id="tints" className="display-lg mt-3">
             One mark, any token
           </h2>
@@ -140,13 +155,51 @@ function Marks() {
           </div>
         </section>
 
+        <section aria-labelledby="naming" className="mt-20">
+          <p className="eyebrow text-primary">Naming & export</p>
+          <h2 id="naming" className="display-lg mt-3">
+            Aliases and inline rendering
+          </h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <h3 className="text-lg">Short aliases</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Every mark answers to a short lowercase alias as well as its canonical name, so
+                CMS-stored placements stay compact and legacy values keep resolving. Enumerate them
+                with <code className="btn-mono text-primary">MARK_ALIASES</code> and normalise a
+                stored value with <code className="btn-mono text-primary">resolveMarkName()</code>.
+              </p>
+              <p className="mt-4 font-mono text-xs text-muted-foreground">
+                {'<BrushMark name="highlight1" /> · "stroke4" · "arrow1" · "star"'}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <h3 className="text-lg">Inline mode for canvas export</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                DOM-to-canvas rasterisers do not reproduce masked backgrounds. Pass{" "}
+                <code className="btn-mono text-primary">render="inline"</code> and the artwork is
+                fetched once per mark and inlined with{" "}
+                <code className="btn-mono text-primary">fill="currentColor"</code> — same token
+                guarantee, survives export. Nothing is bundled eagerly.
+              </p>
+              <div className="mt-5 flex items-center gap-6">
+                <BrushMark name="arrow1" render="inline" className="h-16 text-primary" />
+                <BrushMark name="star1" render="inline" className="h-16 text-highlight" />
+                <MarkedText render="inline" className="text-lg">
+                  inline underline
+                </MarkedText>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {CATEGORY_ORDER.map((category) => {
           const names = MARK_NAMES.filter((name) => MARKS[name].category === category);
           if (names.length === 0) return null;
 
           return (
             <section key={category} aria-labelledby={`cat-${category}`} className="mt-20">
-              <p className="eyebrow">Library</p>
+              <p className="eyebrow text-primary">Library</p>
               <h2 id={`cat-${category}`} className="display-lg mt-3">
                 {MARK_CATEGORY_LABELS[category]}
               </h2>
