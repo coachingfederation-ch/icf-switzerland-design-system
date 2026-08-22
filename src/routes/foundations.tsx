@@ -83,7 +83,7 @@ function Foundations() {
             <p className="eyebrow text-primary">Eyebrow label</p>
             <p className="section-label mt-3">Section label</p>
             <p className="mt-3 font-mono text-xs text-muted-foreground">
-              eyebrow (primary) / section-label (muted) · 11px · 700 · tracking 0.16em · uppercase
+              eyebrow (inherits colour) / section-label (muted) · 11px · 700 · tracking 0.16em · uppercase
             </p>
           </div>
         </div>
