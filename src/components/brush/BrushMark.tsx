@@ -160,7 +160,7 @@ export function MarkedText({
   name = "TextHighlighMark01",
   markClassName,
   className,
-  render,
+  render = "mask",
 }: MarkedTextProps) {
   return (
     <span className={cn("relative inline-block", className)}>
