@@ -2291,6 +2291,33 @@
       "name": "TooltipProvider",
       "file": "src/components/ui/tooltip",
       "import_path": ""
+    },
+    {
+      "name": "MenuRow",
+      "file": "src/components/ui/menu-row",
+      "import_path": "",
+      "props": [
+        {
+          "name": "asChild",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "className",
+          "type": "string"
+        }
+      ],
+      "usage": "Row treatment for lightweight, non-Radix menus \u2014 plain anchors or router links inside a shadow-soft card (account menu, language switcher). Matches DropdownMenuItem so both kinds of menu read identically. Use asChild to render a link.",
+      "examples": [
+        {
+          "label": "Language switcher rows",
+          "code": "<div className=\"overflow-hidden rounded-xl border border-border bg-card shadow-soft\">\n  <MenuRow asChild><Link to=\"/de\">Deutsch</Link></MenuRow>\n  <MenuRow asChild><Link to=\"/fr\">Fran\u00e7ais</Link></MenuRow>\n</div>"
+        }
+      ],
+      "antipatterns": [
+        "Hand-maintaining the padding/size/hover values on each menu anchor instead of MenuRow or the menu-item utility.",
+        "Using MenuRow where full Radix keyboard semantics are needed \u2014 use DropdownMenu with asChild links there."
+      ]
     }
   ],
   "assets": [
