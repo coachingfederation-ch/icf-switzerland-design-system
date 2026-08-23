@@ -170,9 +170,11 @@ function Marks() {
                 CMS-stored placements stay compact and legacy values keep resolving. Enumerate them
                 with <code className="btn-mono text-primary">MARK_ALIASES</code> and normalise a
                 stored value with <code className="btn-mono text-primary">resolveMarkName()</code>.
+                Ring marks answer to both <code className="btn-mono text-primary">circle1</code> and{" "}
+                <code className="btn-mono text-primary">circular1</code>; aliases are never removed.
               </p>
               <p className="mt-4 font-mono text-xs text-muted-foreground">
-                {'<BrushMark name="highlight1" /> · "stroke4" · "arrow1" · "star"'}
+                {'<BrushMark name="highlight1" /> · "stroke4" · "arrow1" · "circular2" · "star"'}
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-card p-6">
@@ -192,8 +194,35 @@ function Marks() {
                 </MarkedText>
               </div>
             </div>
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <h3 className="text-lg">Awaitable artwork loader</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Renderers that draw straight to a canvas need the markup, not a component.{" "}
+                <code className="btn-mono text-primary">loadMarkSvg(name)</code> returns the same
+                sanitised, <code className="btn-mono text-primary">currentColor</code>-painted SVG
+                string that inline mode uses, through the same per-URL cache — so a share card and
+                an on-page mark cost one request together.
+              </p>
+              <p className="mt-4 font-mono text-xs text-muted-foreground">
+                {'const svg = await loadMarkSvg("circular2");'}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <h3 className="text-lg">Artwork origin</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                The 30 SVGs ship inside the library and resolve through the bundler, so they are
+                served from your own origin — no cross-origin fetch, and a canvas that draws them
+                stays untainted. To serve them from elsewhere, call{" "}
+                <code className="btn-mono text-primary">configureMarkUrls()</code> once at start-up;
+                both render modes and the loader follow it.
+              </p>
+              <p className="mt-4 font-mono text-xs text-muted-foreground">
+                {'configureMarkUrls((name) => `/brand/marks/${name}.svg`);'}
+              </p>
+            </div>
           </div>
         </section>
+
 
         {CATEGORY_ORDER.map((category) => {
           const names = MARK_NAMES.filter((name) => MARKS[name].category === category);
