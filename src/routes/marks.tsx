@@ -43,16 +43,18 @@ const TINTS: { label: string; className: string }[] = [
 ];
 
 /*
- * Canonical name -> its numbered short alias. `star` (the legacy alias for
- * Star01) is skipped so each tile shows the alias a placement editor writes.
+ * Canonical name -> its numbered short alias. Legacy and duplicate spellings
+ * (`star`, `circular*`) are skipped so each tile shows one canonical short
+ * alias — the value a placement editor writes.
  */
 const ALIAS_BY_NAME = Object.entries(MARK_ALIASES).reduce<Partial<Record<MarkName, MarkAlias>>>(
   (acc, [alias, name]) => {
-    if (alias !== "star") acc[name] = alias as MarkAlias;
+    if (alias !== "star" && !acc[name]) acc[name] = alias as MarkAlias;
     return acc;
   },
   {},
 );
+
 
 function MarkTile({ name }: { name: MarkName }) {
   const mark = MARKS[name];
