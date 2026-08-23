@@ -6,7 +6,8 @@
  *
  * - `render="mask"` (default) paints the artwork with `mask-image`. Cheapest,
  *   cached by the browser like any image.
- * - `render="inline"` fetches the SVG once per mark and inlines it with
+ * - `render="inline"` fetches the SVG once per mark (via `loadMarkSvg`) and
+ *   inlines it with
  *   `fill="currentColor"`. Needed when the DOM is rasterised to a canvas
  *   (`html-to-image` share cards), which does not reproduce masked backgrounds.
  *
@@ -33,7 +34,6 @@ export type BrushMarkProps = Omit<React.ComponentPropsWithoutRef<"span">, "child
   render?: BrushMarkRender;
 };
 
-
 export function BrushMark({
   name,
   preserveRatio = true,
@@ -52,7 +52,7 @@ export function BrushMark({
       return;
     }
     let active = true;
-    fetchInlineSvg(mark.url)
+    loadMarkSvgFromUrl(mark.url)
       .then((svg) => {
         if (active) setMarkup(svg);
       })
