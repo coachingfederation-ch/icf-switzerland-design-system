@@ -17,6 +17,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { MARKS, resolveMarkName, type MarkNameOrAlias } from "./marks";
+import { loadMarkSvgFromUrl } from "./mark-svg";
 
 export type BrushMarkRender = "mask" | "inline";
 
@@ -32,40 +33,6 @@ export type BrushMarkProps = Omit<React.ComponentPropsWithoutRef<"span">, "child
   render?: BrushMarkRender;
 };
 
-/** One in-flight/settled fetch per artwork URL, shared across instances. */
-const inlineCache = new Map<string, Promise<string>>();
-
-/**
- * Strips anything executable or externally-referencing from fetched artwork and
- * forces the paint to `currentColor`, so the token guarantee still holds.
- */
-function sanitizeSvg(source: string): string {
-  return source
-    .replace(/<\?xml[^>]*\?>/gi, "")
-    .replace(/<!DOCTYPE[^>]*>/gi, "")
-    .replace(/<script[\s\S]*?<\/script>/gi, "")
-    .replace(/<foreignObject[\s\S]*?<\/foreignObject>/gi, "")
-    .replace(/\son\w+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, "")
-    .replace(/\s(?:fill|stroke)\s*=\s*("[^"]*"|'[^']*')/gi, (match) =>
-      /none/i.test(match) ? match : match.replace(/=.*/, '="currentColor"'),
-    )
-    .replace(/\sstyle\s*=\s*("[^"]*"|'[^']*')/gi, "")
-    .trim();
-}
-
-function fetchInlineSvg(url: string): Promise<string> {
-  let pending = inlineCache.get(url);
-  if (!pending) {
-    pending = fetch(url)
-      .then((response) => {
-        if (!response.ok) throw new Error(`Failed to load mark: ${response.status}`);
-        return response.text();
-      })
-      .then(sanitizeSvg);
-    inlineCache.set(url, pending);
-  }
-  return pending;
-}
 
 export function BrushMark({
   name,
